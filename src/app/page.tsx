@@ -1,10 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
-import Banner from "@/components/Banner";
-import FeaturesBentoGrid from "@/components/FeaturesBentoGrid";
-import '../app/globals.css';
-import FeatureSwitcher from "@/components/FeatureSwitcher";
+import FeaturesBentoGrid from "@/components/Features/FeaturesBentoGrid";
+import FeatureSwitcher from "@/components/Features/FeatureSwitcher";
+import Banner from "@/components/Footer/Banner";
+import Footer from "@/components/Footer/Footer";
+import Hero from "@/components/Hero/Hero";
+import Navbar from "@/components/Navbar/Navbar";
+
 
 export default function Home() {
   return <div>
