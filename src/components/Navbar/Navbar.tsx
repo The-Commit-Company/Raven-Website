@@ -63,16 +63,16 @@ export default function Navbar() {
 
                     {/* Links for larger screens */}
                     <div className="hidden sm:flex sm:space-x-8 sm:items-center">
-                        <Link href="#" className={styles.linkHover}>
+                        <Link href="https://github.com/The-Commit-Company/raven" className={styles.linkHover}>
                             Github
                         </Link>
-                        <Link href="#" className={styles.linkHover}>
+                        <Link href="https://x.com/ravenchat_ai?s=21" className={styles.linkHover}>
                             Twitter
                         </Link>
-                        <Link href="#" className={styles.linkHover}>
+                        <Link href="https://community.ravenapp.cloud" className={styles.linkHover}>
                             Community
                         </Link>
-                        <Link href="#" className={styles.linkHover}>
+                        <Link href="https://www.linkedin.com/company/the-commit-company" className={styles.linkHover}>
                             About
                         </Link>
                     </div>
@@ -90,17 +90,17 @@ export default function Navbar() {
             {isOpen && (
                 <div className="sm:hidden">
                     <div className="space-y-2 p-4">
-                        <Link href="#" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
+                        <Link href="https://github.com/The-Commit-Company/raven" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
                             Github
                         </Link>
-                        <Link href="#" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
+                        <Link href="https://x.com/ravenchat_ai?s=21" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
                             Twitter
                         </Link>
-                        <Link href="#" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
+                        <Link href="https://community.ravenapp.cloud" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
                             Community
                         </Link>
                         <div className="mt-4 flex justify-between">
-                            <Link href="#" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
+                            <Link href="https://www.linkedin.com/company/the-commit-company" className="block text-gray-800 hover:text-black font-medium" onClick={toggleMenu}>
                                 About
                             </Link>
                             <Link href="#" className="bg-black text-white px-3 py-1.5 text-sm rounded-md transition-all duration-200 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 hover:shadow-md">

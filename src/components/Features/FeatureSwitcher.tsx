@@ -1,10 +1,12 @@
 'use client';
-import React, { FC, ReactNode, useState } from 'react';
-import { FaMagic } from "react-icons/fa";
+import React, { FC, ReactNode, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { BiMessageDetail, BiSearchAlt } from 'react-icons/bi';
+import { CgPoll } from 'react-icons/cg';
+import { FiCalendar } from 'react-icons/fi';
 
 type ImageOption = {
     label: string;
@@ -15,28 +17,28 @@ type ImageOption = {
 
 const options: ImageOption[] = [
     {
-        label: "Lorem",
-        src: "/images/image1.png", // Replace with actual image paths
-        icon: <FaMagic />,
-        description: "consectetur adipiscing elit. Nam at erat felis. Ut sollicitudin lacus dolor",
+        label: "Threads",
+        src: "/images/Threads.png",
+        icon: <BiMessageDetail />,
+        description: "Threads help keep your conversations organized, making discussions easier to follow and manage",
     },
     {
-        label: "Ipsum",
-        src: "/images/image2.png",
-        icon: <FaMagic />,
-        description: "vel eleifend sem efficitur ac. Aenean tincidunt mattis sem quis dapibus",
+        label: "Search",
+        src: "/images/Search.png",
+        icon: <BiSearchAlt />,
+        description: "Press ⌘K (Ctrl + K on Windows) to search channels, people, messages and files",
     },
     {
-        label: "Dolor",
-        src: "/images/image3.png",
-        icon: <FaMagic />,
-        description: "Mauris lorem velit, venenatis finibus risus in, elementum interdum risus",
+        label: "Polls",
+        src: "/images/Polls.png",
+        icon: <CgPoll />,
+        description: "Polls make it easy to gather feedback and opinions, helping your team make decisions",
     },
     {
-        label: "Amet",
-        src: "/images/image4.png",
-        icon: <FaMagic />,
-        description: "Maecenas dignissim eleifend turpis, nec bibendum augue. Pellentesque non rutrum felis",
+        label: "Google Meet Integration",
+        src: "/images/GMeetIntegration.png",
+        icon: <FiCalendar />,
+        description: "You can quickly schedule and join meetings right from any channel/ DMs for easy collaboration",
     }
 ];
 
@@ -44,59 +46,78 @@ const options: ImageOption[] = [
 const FeatureSwitcher: FC = () => {
     const [selectedOption, setSelectedOption] = useState<ImageOption>(options[0]);
 
-    return (
-        <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-8">
-            {/* Main Box */}
-            <div className="relative w-full max-w-7xl mx-auto p-8 bg-white rounded-xl border-4 border-gray-50 outline outline-gray-100">
+    // Set up auto-switching logic using useEffect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSelectedOption(prev => {
+                const currentIndex = options.findIndex(opt => opt.label === prev.label);
+                const nextIndex = (currentIndex + 1) % options.length; // Loop back to 0 after the last one
+                return options[nextIndex];
+            });
+        }, 10000); // Switch every 10 seconds
 
-                {/* Mobile Slider (visible only on small screens) */}
-                <div className="block md:hidden">  {/* Hidden on medium and above */}
-                    <Swiper
-                        modules={[Pagination]}
-                        spaceBetween={30}
-                        slidesPerView={1}
-                        pagination={{ clickable: true }}
-                        className="swiper-container"
-                    >
-                        {options.map((option) => (
-                            <SwiperSlide key={option.label}>
+        // Clean up the interval on component unmount
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <Swiper
+            modules={[Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            pagination={{
+                clickable: true,
+                el: '.swiper-pagination', // Use a custom pagination element
+            }}
+            className="swiper-container w-full"
+        >
+            {options.map((option) => (
+                <SwiperSlide key={option.label}>
+                    <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-8">
+                        {/* Main Box */}
+                        <div className="relative w-full max-w-6xl mx-auto md:p-8 p-4 bg-white rounded-xl border-4 border-gray-50 outline outline-gray-100">
+                            {/* Desktop/Web: Only show the selected image */}
+                            <div className="hidden md:block">
+                                <div className="grid grid-cols-4 gap-8 mb-10 text-left">
+                                    {options.map((opt) => (
+                                        <div key={opt.label} onClick={() => setSelectedOption(opt)} className="cursor-pointer">
+                                            <FeatureButton
+                                                icon={opt.icon}
+                                                title={opt.label}
+                                                description={opt.description}
+                                                isSelected={selectedOption.label === opt.label} // Pass selected state
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Image Section */}
+                                <div className="relative h-full rounded-lg border border-gray-100  overflow-hidden">
+                                    <img
+                                        src={selectedOption.src}
+                                        alt={selectedOption.label}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Mobile Slider (visible only on small screens) */}
+                            <div className="block md:hidden">
                                 <FeatureSlide
                                     icon={option.icon}
                                     title={option.label}
                                     description={option.description}
                                     imageSrc={option.src}
                                 />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-
-                {/* Desktop/Web: Only show the selected image */}
-                <div className="hidden md:block">
-                    <div className="grid grid-cols-4 gap-8 mb-10 text-left">
-                        {options.map((option) => (
-                            <div key={option.label} onClick={() => setSelectedOption(option)} className="cursor-pointer">
-                                <FeatureButton
-                                    icon={option.icon}
-                                    title={option.label}
-                                    description={option.description}
-                                    isSelected={selectedOption.label === option.label} // Pass selected state
-                                />
                             </div>
-                        ))}
+                        </div>
                     </div>
+                </SwiperSlide>
+            ))}
 
-                    {/* Image Section */}
-                    <div className="relative w-full h-[400px] mt-6 rounded-lg overflow-hidden">
-                        <img
-                            src={selectedOption.src}
-                            alt={selectedOption.label}
-                            className="object-cover w-full h-full rounded-lg"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
+            {/* Pagination Dots: Only visible on mobile */}
+            <div className="swiper-pagination md:hidden"></div>
+        </Swiper>
     );
 };
 
@@ -112,24 +133,24 @@ interface FeatureSlideProps {
 
 const FeatureSlide: FC<FeatureSlideProps> = ({ icon, title, description, imageSrc }) => {
     return (
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center my-2">
             {/* Feature Button */}
             <div className="text-left cursor-pointer">
-                <div className="flex items-center justify-start text-gray-600 text-xl mb-2">
+                <div className="flex items-center justify-start text-gray-600 text-xl mb-3">
                     {icon}
                     <h3 className="font-semibold text-gray-900 ml-2">{title}</h3>
                 </div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-base">
                     {description}
                 </p>
             </div>
 
             {/* Image Section */}
-            <div className="relative w-full h-[400px] mt-6 rounded-lg overflow-hidden">
+            <div className="w-full mt-6 rounded-md border border-gray-100 overflow-hidden">
                 <img
                     src={imageSrc}
                     alt={title}
-                    className="object-cover w-full h-full rounded-lg"
+                    className="object-cover w-full h-full"
                 />
             </div>
         </div>
@@ -147,11 +168,11 @@ interface FeatureButtonProps {
 const FeatureButton: FC<FeatureButtonProps> = ({ icon, title, description, isSelected }) => {
     return (
         <div className={`text-left cursor-pointer ${isSelected ? 'text-gray-900' : 'text-gray-400'}`}>
-            <div className={`flex items-center justify-start text-xl mb-2 ${isSelected ? 'font-semibold' : 'font-normal'}`}>
+            <div className={`flex items-center justify-start text-lg mb-2 ${isSelected ? 'font-semibold' : 'font-medium'}`}>
                 {icon}
                 <h3 className={`ml-2 ${isSelected ? 'text-gray-900' : 'text-gray-400'}`}>{title}</h3>
             </div>
-            <p className={`text-sm ${isSelected ? 'text-gray-900' : 'text-gray-400'}`}>
+            <p className={`text-[14px] ${isSelected ? 'text-gray-900' : 'text-gray-400'}`}>
                 {description}
             </p>
         </div>

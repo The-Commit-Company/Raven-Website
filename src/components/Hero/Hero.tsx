@@ -19,10 +19,10 @@ const Hero: FC = () => {
             </p>
             <div className="space-x-4">
                 <button className="px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base bg-black text-white rounded-lg transition-all duration-200 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 hover:shadow-lg">
-                    Get Started
+                    Get started
                 </button>
                 <button className="px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base border border-gray-300 text-black rounded-lg transition-all duration-200 hover:border-gray-800 hover:shadow-md">
-                    Book a Demo
+                    Request a demo
                 </button>
             </div>
         </section>
