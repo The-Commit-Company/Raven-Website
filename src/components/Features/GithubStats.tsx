@@ -87,8 +87,8 @@ const GithubStats: React.FC = () => {
             {
                 label: 'Weekly Commits',
                 data: commitData, // Weekly commit data
-                borderColor: '#00A550',
-                backgroundColor: 'rgba(40, 167, 69, 0.2)', // Light green for the fill
+                borderColor: '#00AB66',
+                backgroundColor: '#71BC78',
                 tension: 0.4, // Curved lines
             },
         ],
@@ -123,7 +123,8 @@ const GithubStats: React.FC = () => {
     };
 
     return (
-        <div className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10 bg-gray-100 md:p-6 p-4 rounded-xl">
+        <a className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10 bg-gray-100 md:p-6 p-4 rounded-xl"
+            href='https://github.com/The-Commit-Company/raven'>
             <h3 className="text-2xl font-bold mb-4">Raven</h3>
 
             <div className="flex flex-wrap space-x-2 mb-4">
@@ -148,7 +149,7 @@ const GithubStats: React.FC = () => {
                 <Line data={data} options={options} />
             </div>
             <p className="text-xs text-gray-500 mt-2">Commits per week, updated a day ago</p>
-        </div>
+        </a>
     );
 };
 

@@ -3,7 +3,7 @@ import Image from 'next/image';
 const RavenGraphic = () => {
     return (
         <div className='md:pt-36 lg:pt-36 pt-16 flex flex-col gap-10 border-b border-gray-100 shadow-base'>
-            <div className='flex flex-col gap-4 px-8'>
+            <div className='flex flex-col gap-4 px-8 md:mb-4'>
                 <h4 className='text-center text-4xl md:text-6xl font-bold'>Smart. Easy. Elegant.</h4>
                 <p className='text-center text-lg md:text-2xl text-gray-500'>Meticulous by design, so your team can focus on what’s essential.</p>
             </div>
