@@ -35,7 +35,7 @@ const Footer: FC = () => {
             </div>
             {/* Half-visible "raven" text at the bottom */}
             <div className="absolute bottom-0 left-0 right-0 text-center hidden md:block z-0">
-                <h1 className="text-[#26303e] font-bold leading-none text-[150px] lg:text-[400px] font-calsans"
+                <h1 className="text-[#232d3b] font-bold leading-none text-[150px] lg:text-[400px] font-calsans"
                     style={{ transform: 'translateY(35%)' }}>
                     raven
                 </h1>

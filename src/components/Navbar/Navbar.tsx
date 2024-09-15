@@ -62,7 +62,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Links for larger screens */}
-                    <div className="hidden sm:flex sm:space-x-8 sm:items-center">
+                    <div className="hidden sm:flex sm:space-x-8 sm:items-center text-[14px]">
                         <Link href="https://github.com/The-Commit-Company/raven" className={styles.linkHover}>
                             Github
                         </Link>
