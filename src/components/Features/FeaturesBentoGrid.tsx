@@ -15,27 +15,27 @@ interface GridItemProps {
 // Data for the grid/slider items
 const gridItems: GridItemProps[] = [
   {
-    title: 'Stay on Track with Message Replies',
-    description: 'Reply to messages from the actions palette and keep the conversation going',
-    image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
-      <Image src="/images/MessageReplies.png" alt="Message Replies" width={800} height={200} className="rounded-md" />
+    title: 'Craft your messages with Rich Text',
+    description: 'Easily send messages with formatting, highlights, links, emojis, code blocks, mentions and more',
+    image: <div className="border border-gray-100 rounded-md shadow-sm">
+      <video src="/images/MessageFormatting.mov" width={800} height={200} playsInline autoPlay muted loop className="rounded-md" />
     </div>,
     className: 'md:col-span-2',
     headingPosition: 'below',
   },
   {
-    title: 'Message Actions',
-    description: 'Simply right click a message to see the available actions - reply, edit, delete, copy, forward, create a thread etc...',
+    title: 'Set your Availability',
+    description: 'Are you available to chat? Set your status and let others know when you are busy or away',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
-      <Image src="/images/MessageActions.png" alt="Message Actions" width={180} height={200} className="rounded-md" />
+      <Image src="/images/AvailabilityStatus.png" alt="Notification Controls" width={320} height={200} className="rounded-md" />
     </div>,
     headingPosition: 'below',
   },
   {
-    title: 'Availability Status',
-    description: 'Are you available to chat? Set your status and let others know when you are busy or away',
+    title: 'Quick Message Actions',
+    description: 'Simply right click a message to see the available actions - reply, edit, delete, copy, forward, create a thread etc...',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
-      <Image src="/images/AvailabilityStatus.png" alt="Notification Controls" width={320} height={200} className="rounded-md" />
+      <Image src="/images/MessageActions.png" alt="Message Actions" width={200} height={200} className="rounded-md" />
     </div>,
     headingPosition: 'below',
   },

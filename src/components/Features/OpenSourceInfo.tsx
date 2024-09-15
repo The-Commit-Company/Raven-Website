@@ -8,7 +8,7 @@ const OpenSourceInfo: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">100% Open Source</h2>
             <p className="text-md md:text-lg text-gray-500 text-left">
                 We believe in complete transparency. You can explore the code,{' '}
-                <a href="#" className="text-blue-400 underline hover:text-blue-500 transition-colors">request a feature</a> or contribute your own. Since it's fully open-source, there’s no vendor lock-in — giving you full control over the software.
+                <a href="https://github.com/The-Commit-Company/raven/issues" className="text-blue-400 underline hover:text-blue-500 transition-colors">request a feature</a> or contribute your own. Since it's fully open-source, there’s no vendor lock-in — giving you full control over the software.
             </p>
 
             <div className="flex space-x-4">
