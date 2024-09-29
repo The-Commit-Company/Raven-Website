@@ -1,3 +1,4 @@
+import AppsAndIntegrations from "@/components/Features/AppsAndIntegrations";
 import FeaturesBentoGrid from "@/components/Features/FeaturesBentoGrid";
 import FeatureSwitcher from "@/components/Features/FeatureSwitcher";
 import OpenSource from "@/components/Features/OpenSource";
@@ -12,9 +13,10 @@ export default function Home() {
   return <div>
     <Navbar />
     <Hero />
+    <AppsAndIntegrations />
     <FeatureSwitcher />
     <FeaturesBentoGrid />
-    <div className="bg-gradient-to-b from-[#F8F9FA] to-[#FDFDFE]">
+    <div className="bg-gradient-to-b from-backgroundLight to-backgroundLighter">
       <RavenGraphic />
       <OpenSource />
     </div>

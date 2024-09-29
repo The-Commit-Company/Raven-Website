@@ -10,7 +10,7 @@ const RavenGraphic = () => {
             <div className="w-full flex justify-center overflow-hidden">
                 <div className="relative w-full lg:w-full overflow-hidden md:overflow-visible h-[40vh] md:h-[90vh]">
                     <Image
-                        src="/images/RavenUIGraphic.png"
+                        src="/assets/RavenUIGraphic.png"
                         alt="Raven Graphic"
                         layout="fill"
                         objectFit="cover"

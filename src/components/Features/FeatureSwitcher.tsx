@@ -18,25 +18,25 @@ type ImageOption = {
 const options: ImageOption[] = [
     {
         label: "Threads",
-        src: "/images/Threads.png",
+        src: "/assets/Threads.png",
         icon: <BiMessageDetail />,
         description: "Threads help keep your conversations organized, making discussions easier to follow and manage",
     },
     {
         label: "Search",
-        src: "/images/Search.png",
+        src: "/assets/Search.png",
         icon: <BiSearchAlt />,
         description: "Press ⌘K (Ctrl + K on Windows) to search channels, people, messages and files",
     },
     {
         label: "Polls",
-        src: "/images/Polls.png",
+        src: "/assets/Polls.png",
         icon: <CgPoll />,
         description: "Polls make it easy to gather feedback and opinions, helping your team make decisions",
     },
     {
         label: "Google Meet Integration",
-        src: "/images/GMeetIntegration.png",
+        src: "/assets/GMeetIntegration.png",
         icon: <FiCalendar />,
         description: "You can quickly schedule and join meetings right from any channel/ DMs for easy collaboration",
     }

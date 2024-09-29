@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { FC } from 'react';
 
 const Banner: FC = () => {
     return (
-        <div className="w-full bg-gray-800 py-16 px-8 flex justify-between items-center">
+        <div className="w-full bg-backgroundDark py-16 px-8 flex justify-between items-center">
             <div className="max-w-2xl">
                 <h2 className="text-3xl font-bold mb-6">
-                    <span className="text-gray-400">It's time</span>
+                    <span className="text-gray-400">It&apos;s time</span>
                     <br />
                     <span className="text-white text-4xl">Send a raven</span>
                 </h2>
@@ -14,7 +14,7 @@ const Banner: FC = () => {
                     <button className="px-6 py-2 bg-white text-gray-600 font-semibold rounded hover:bg-gray-200 transition-colors duration-200">
                         Try for free
                     </button>
-                    <button className="px-6 py-2 border border-gray-500 text-gray-200 font-semibold rounded hover:bg-gray-900 transition-colors duration-200">
+                    <button className="px-6 py-2 border border-gray-500 text-gray-200 font-semibold rounded hover:bg-buttonDarkGray transition-colors duration-200">
                         Request a demo
                     </button>
                 </div>

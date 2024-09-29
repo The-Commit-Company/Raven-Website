@@ -53,14 +53,14 @@ const GithubRedirectButton = () => {
 
     return (
         <div
-            className="flex items-center border border-gray-700 rounded-md overflow-hidden cursor-pointer"
+            className="flex items-center border border-borderAccent rounded-md overflow-hidden cursor-pointer"
             onClick={() => window.open(githubRepoUrl, '_blank')}
         >
-            <div className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200">
+            <div className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-buttonDarkGray transition-colors duration-200">
                 <FaRegStar className="w-4 h-4" />
                 <span>Star</span>
             </div>
-            <div className="px-3 py-2 text-sm font-medium text-gray-400 bg-gray-900">
+            <div className="px-3 py-2 text-sm font-medium text-gray-400 bg-backgroundDarker">
                 {stars !== null && stars !== undefined ? stars.toLocaleString() : 'Loading...'}
             </div>
         </div>

@@ -18,7 +18,7 @@ const gridItems: GridItemProps[] = [
     title: 'Craft your messages with Rich Text',
     description: 'Easily send messages with formatting, highlights, links, emojis, code blocks, mentions and more',
     image: <div className="border border-gray-100 rounded-md shadow-sm">
-      <video src="/images/MessageFormatting.mov" width={800} height={200} playsInline autoPlay muted loop className="rounded-md" />
+      <video src="/assets/MessageFormatting.mov" width={800} height={200} playsInline autoPlay muted loop className="rounded-md" />
     </div>,
     className: 'md:col-span-2',
     headingPosition: 'below',
@@ -27,7 +27,7 @@ const gridItems: GridItemProps[] = [
     title: 'Set your Availability',
     description: 'Are you available to chat? Set your status and let others know when you are busy or away',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
-      <Image src="/images/AvailabilityStatus.png" alt="Notification Controls" width={320} height={200} className="rounded-md" />
+      <Image src="/assets/AvailabilityStatus.png" alt="Notification Controls" width={320} height={200} className="rounded-md" />
     </div>,
     headingPosition: 'below',
   },
@@ -35,7 +35,7 @@ const gridItems: GridItemProps[] = [
     title: 'Quick Message Actions',
     description: 'Simply right click a message to see the available actions - reply, edit, delete, copy, forward, create a thread etc...',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
-      <Image src="/images/MessageActions.png" alt="Message Actions" width={200} height={200} className="rounded-md" />
+      <Image src="/assets/MessageActions.png" alt="Message Actions" width={200} height={200} className="rounded-md" />
     </div>,
     headingPosition: 'below',
   },
@@ -43,7 +43,7 @@ const gridItems: GridItemProps[] = [
     title: 'Share Images, Documents, or Memes',
     description: 'Need to share a file? Simply drag and drop it onto the screen. You can also find and share memes using our GIF search',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
-      <Image src="/images/ShareMemes.png" alt="Share Images, Documents, or Memes" width={720} height={200} className="rounded-md" />
+      <Image src="/assets/ShareMemes.png" alt="Share Images, Documents, or Memes" width={720} height={200} className="rounded-md" />
     </div>,
     className: 'md:col-span-2',
     headingPosition: 'above',
@@ -76,7 +76,7 @@ const FeaturesBentoGrid: FC = () => {
 
 // Grid card component
 const GridCard: FC<GridItemProps> = ({ title, description, image, className, headingPosition = 'above' }) => (
-  <div className={`bg-white rounded-xl shadow-xs border border-4 border-gray-50 outline outline-gray-100 p-4 sm:p-6 flex flex-col justify-between items-start ${className}`}>
+  <div className={`bg-white rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100 p-4 sm:p-6 flex flex-col justify-between items-start ${className}`}>
     {headingPosition === 'above' && (
       <div className="mb-4">
         <h2 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">{title}</h2>
