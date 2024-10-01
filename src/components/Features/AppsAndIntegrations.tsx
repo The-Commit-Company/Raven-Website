@@ -15,7 +15,7 @@ const AppsAndIntegrations: FC = () => {
                     src={ravenIntegrations}
                     alt="Raven Integration Graphic"
                     objectFit="cover"
-                    className="relative z-10"
+                    className="relative"
                 />
             </div>
         </div>

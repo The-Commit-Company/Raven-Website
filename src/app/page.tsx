@@ -1,3 +1,4 @@
+import AIFeatures from "@/components/Features/AIFeatures/AIFeatures";
 import AppsAndIntegrations from "@/components/Features/AppsAndIntegrations";
 import FeaturesBentoGrid from "@/components/Features/FeaturesBentoGrid";
 import FeatureSwitcher from "@/components/Features/FeatureSwitcher";
@@ -14,6 +15,7 @@ export default function Home() {
     <Navbar />
     <Hero />
     <AppsAndIntegrations />
+    <AIFeatures />
     <FeatureSwitcher />
     <FeaturesBentoGrid />
     <div className="bg-gradient-to-b from-backgroundLight to-backgroundLighter">
