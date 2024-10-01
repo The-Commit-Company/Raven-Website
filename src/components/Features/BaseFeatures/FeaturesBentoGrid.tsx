@@ -54,12 +54,12 @@ const gridItems: GridItemProps[] = [
 // Main Features Grid Component
 const FeaturesBentoGrid: FC = () => {
   return (
-    <div className="md:pb-36 pb-16 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
+    <div className="md:pb-36 pb-16 max-w-6xl mx-auto">
       {/* Section heading */}
       <div className='flex flex-col gap-2 mb-12'>
         <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><IoChatboxEllipses /><p>Chat</p></div>
         <h4 className='text-2xl md:text-6xl font-bold font-calsans'>
-          Everything you need to chat, share and collaborate
+          Everything you need to chat, share, and collaborate
         </h4>
       </div>
       {/* Responsive grid layout */}

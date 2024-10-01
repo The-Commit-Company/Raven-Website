@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import { BiMessageDetail, BiSearchAlt } from 'react-icons/bi';
 import { CgPoll } from 'react-icons/cg';
 import { FiCalendar } from 'react-icons/fi';
+import { GiDiamonds } from 'react-icons/gi';
 
 type ImageOption = {
     label: string;
@@ -61,63 +62,71 @@ const FeatureSwitcher: FC = () => {
     }, []);
 
     return (
-        <Swiper
-            modules={[Pagination]}
-            spaceBetween={30}
-            slidesPerView={1}
-            pagination={{
-                clickable: true,
-                el: '.swiper-pagination', // Use a custom pagination element
-            }}
-            className="swiper-container w-full"
-        >
-            {options.map((option) => (
-                <SwiperSlide key={option.label}>
-                    <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-8">
-                        {/* Main Box */}
-                        <div className="relative w-full max-w-6xl mx-auto md:p-8 p-4 bg-white rounded-xl border-4 border-gray-50 outline outline-gray-100">
-                            {/* Desktop/Web: Only show the selected image */}
-                            <div className="hidden md:block">
-                                <div className="grid grid-cols-4 gap-8 mb-10 text-left">
-                                    {options.map((opt) => (
-                                        <div key={opt.label} onClick={() => setSelectedOption(opt)} className="cursor-pointer">
-                                            <FeatureButton
-                                                icon={opt.icon}
-                                                title={opt.label}
-                                                description={opt.description}
-                                                isSelected={selectedOption.label === opt.label} // Pass selected state
-                                            />
-                                        </div>
-                                    ))}
+        <div className='flex flex-col max-w-6xl mx-auto md:pb-36 pb-16'>
+            <div className='flex flex-col gap-2 mb-12'>
+                <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><GiDiamonds /><p>Notable Features</p></div>
+                <h4 className='text-2xl md:text-6xl font-bold font-calsans'>
+                    Bringing you Threads, Polls, One-click Meetings, and more
+                </h4>
+            </div>
+            <Swiper
+                modules={[Pagination]}
+                spaceBetween={30}
+                slidesPerView={1}
+                pagination={{
+                    clickable: true,
+                    el: '.swiper-pagination', // Use a custom pagination element
+                }}
+                className="swiper-container w-full"
+            >
+                {options.map((option) => (
+                    <SwiperSlide key={option.label}>
+                        <div className="flex flex-col items-center justify-center">
+                            {/* Main Box */}
+                            <div className="relative w-full md:p-8 p-4 bg-white rounded-xl border-4 border-gray-50 outline outline-gray-100">
+                                {/* Desktop/Web: Only show the selected image */}
+                                <div className="hidden md:block">
+                                    <div className="grid grid-cols-4 gap-8 mb-10 text-left">
+                                        {options.map((opt) => (
+                                            <div key={opt.label} onClick={() => setSelectedOption(opt)} className="cursor-pointer">
+                                                <FeatureButton
+                                                    icon={opt.icon}
+                                                    title={opt.label}
+                                                    description={opt.description}
+                                                    isSelected={selectedOption.label === opt.label} // Pass selected state
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Image Section */}
+                                    <div className="relative h-full rounded-lg border border-gray-100  overflow-hidden">
+                                        <img
+                                            src={selectedOption.src}
+                                            alt={selectedOption.label}
+                                            className="object-cover w-full h-full"
+                                        />
+                                    </div>
                                 </div>
 
-                                {/* Image Section */}
-                                <div className="relative h-full rounded-lg border border-gray-100  overflow-hidden">
-                                    <img
-                                        src={selectedOption.src}
-                                        alt={selectedOption.label}
-                                        className="object-cover w-full h-full"
+                                {/* Mobile Slider (visible only on small screens) */}
+                                <div className="block md:hidden">
+                                    <FeatureSlide
+                                        icon={option.icon}
+                                        title={option.label}
+                                        description={option.description}
+                                        imageSrc={option.src}
                                     />
                                 </div>
                             </div>
-
-                            {/* Mobile Slider (visible only on small screens) */}
-                            <div className="block md:hidden">
-                                <FeatureSlide
-                                    icon={option.icon}
-                                    title={option.label}
-                                    description={option.description}
-                                    imageSrc={option.src}
-                                />
-                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-            ))}
+                    </SwiperSlide>
+                ))}
 
-            {/* Pagination Dots: Only visible on mobile */}
-            <div className="swiper-pagination md:hidden"></div>
-        </Swiper>
+                {/* Pagination Dots: Only visible on mobile */}
+                <div className="swiper-pagination md:hidden"></div>
+            </Swiper>
+        </div>
     );
 };
 
