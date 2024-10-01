@@ -47,7 +47,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Hamburger Menu for mobile */}
-                    <div className="flex items-center sm:hidden">
+                    <div className="flex items-center pt-3 sm:hidden">
                         <button
                             onClick={toggleMenu}
                             className="text-gray-800 focus:outline-none"

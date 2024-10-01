@@ -77,13 +77,13 @@ const FeatureSwitcher: FC = () => {
                     clickable: true,
                     el: '.swiper-pagination', // Use a custom pagination element
                 }}
-                className="swiper-container w-full"
+                className="swiper-container w-full rounded-xl border-4 border-gray-50 outline outline-gray-100"
             >
                 {options.map((option) => (
                     <SwiperSlide key={option.label}>
                         <div className="flex flex-col items-center justify-center">
                             {/* Main Box */}
-                            <div className="relative w-full md:p-8 p-4 bg-white rounded-xl border-4 border-gray-50 outline outline-gray-100">
+                            <div className="relative w-full md:p-8 p-4 bg-white">
                                 {/* Desktop/Web: Only show the selected image */}
                                 <div className="hidden md:block">
                                     <div className="grid grid-cols-4 gap-8 mb-10 text-left">

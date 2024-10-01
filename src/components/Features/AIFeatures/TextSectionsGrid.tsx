@@ -24,7 +24,7 @@ const TextSection: React.FC<TextSectionProps> = ({ icon, heading, subtext }) => 
 
 const TextSectionsGrid: React.FC = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-14 border-t border-gray-100">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-14 border-t border-gray-50">
             <TextSection
                 icon={<BiMessageDetail />}
                 heading="Context Aware Threads"
