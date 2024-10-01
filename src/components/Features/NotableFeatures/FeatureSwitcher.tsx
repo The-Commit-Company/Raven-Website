@@ -62,10 +62,10 @@ const FeatureSwitcher: FC = () => {
     }, []);
 
     return (
-        <div className='flex flex-col max-w-6xl mx-auto md:pb-36 pb-16'>
+        <div className='flex flex-col max-w-6xl mx-auto md:pb-36 pb-16 px-8 md:px-0'>
             <div className='flex flex-col gap-2 mb-12'>
                 <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><GiDiamonds /><p>Features</p></div>
-                <h4 className='text-2xl md:text-6xl font-bold font-calsans'>
+                <h4 className='text-4xl md:text-6xl font-bold font-calsans'>
                     Keep conversations organized
                 </h4>
             </div>

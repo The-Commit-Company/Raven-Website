@@ -16,7 +16,7 @@ interface GridItemProps {
 // Data for the grid/slider items
 const gridItems: GridItemProps[] = [
   {
-    title: 'Craft your messages with Rich Text',
+    title: 'Craft your messages with rich text',
     description: 'Easily send messages with formatting, highlights, links, emojis, code blocks, mentions and more',
     image: <div className="border border-gray-100 rounded-md shadow-sm">
       <video src="/assets/MessageFormatting.mov" width={800} height={200} playsInline autoPlay muted loop className="rounded-md" />
@@ -25,7 +25,7 @@ const gridItems: GridItemProps[] = [
     headingPosition: 'below',
   },
   {
-    title: 'Set your Availability',
+    title: 'Set your availability',
     description: 'Are you available to chat? Set your status and let others know when you are busy or away',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
       <Image src="/assets/AvailabilityStatus.png" alt="Notification Controls" width={320} height={200} className="rounded-md" />
@@ -33,7 +33,7 @@ const gridItems: GridItemProps[] = [
     headingPosition: 'below',
   },
   {
-    title: 'Quick Message Actions',
+    title: 'Quick message actions',
     description: 'Simply right click a message to see the available actions - reply, edit, delete, copy, forward, create a thread etc...',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
       <Image src="/assets/MessageActions.png" alt="Message Actions" width={200} height={200} className="rounded-md" />
@@ -41,7 +41,7 @@ const gridItems: GridItemProps[] = [
     headingPosition: 'below',
   },
   {
-    title: 'Share Images, Documents, or Memes',
+    title: 'Share images, documents, or memes',
     description: 'Need to share a file? Simply drag and drop it onto the screen. You can also find and share memes using our GIF search',
     image: <div className="border border-gray-100 rounded-md shadow-sm p-1">
       <Image src="/assets/ShareMemes.png" alt="Share Images, Documents, or Memes" width={720} height={200} className="rounded-md" />
@@ -54,11 +54,11 @@ const gridItems: GridItemProps[] = [
 // Main Features Grid Component
 const FeaturesBentoGrid: FC = () => {
   return (
-    <div className="md:pb-36 pb-16 max-w-6xl mx-auto">
+    <div className="md:pb-36 pb-16 px-8 md:px-0 max-w-6xl mx-auto">
       {/* Section heading */}
       <div className='flex flex-col gap-2 mb-12'>
         <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><IoChatboxEllipses /><p>Chat</p></div>
-        <h4 className='text-2xl md:text-6xl font-bold font-calsans'>
+        <h4 className='text-4xl md:text-6xl font-bold font-calsans'>
           Chat, share, and collaborate
         </h4>
       </div>
