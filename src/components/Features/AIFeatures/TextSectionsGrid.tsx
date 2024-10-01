@@ -1,8 +1,8 @@
 import React from 'react';
-import { FaChartBar } from 'react-icons/fa';
-import { GiDiamonds } from 'react-icons/gi';
-import { LuBox } from 'react-icons/lu';
-import { MdRocket } from 'react-icons/md';
+import { BiMessageDetail } from 'react-icons/bi';
+import { LuFunctionSquare } from 'react-icons/lu';
+import { PiToolboxFill } from 'react-icons/pi';
+import { RiExchange2Line } from 'react-icons/ri';
 
 interface TextSectionProps {
     icon: React.ReactNode;
@@ -24,26 +24,26 @@ const TextSection: React.FC<TextSectionProps> = ({ icon, heading, subtext }) => 
 
 const TextSectionsGrid: React.FC = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-14 border-t border-gray-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-14 border-t border-gray-100">
             <TextSection
-                icon={<MdRocket />}
-                heading="Initiatives"
-                subtext="Coordinate strategic product efforts."
+                icon={<BiMessageDetail />}
+                heading="Context Aware Threads"
+                subtext="Bots maintain context of complex multistep tasks via threads."
             />
             <TextSection
-                icon={<LuBox />}
-                heading="Cross-team projects"
-                subtext="Collaborate across teams and departments."
+                icon={<RiExchange2Line />}
+                heading="Dynamic Instructions"
+                subtext="Embed user specific context in your instructions using Jinja."
             />
             <TextSection
-                icon={<GiDiamonds />}
-                heading="Milestones"
-                subtext="Break projects down into concrete phases."
+                icon={<LuFunctionSquare />}
+                heading="Functions"
+                subtext="Call functions within ERPNext to perform tasks like fetching/ creating documents."
             />
             <TextSection
-                icon={<FaChartBar />}
-                heading="Progress insights"
-                subtext="Track scope, velocity, and progress over time."
+                icon={<PiToolboxFill />}
+                heading="Tools"
+                subtext="AI can read and scan files with file search, vision and code interpreter."
             />
         </div>
     );

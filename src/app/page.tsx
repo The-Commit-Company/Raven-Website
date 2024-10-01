@@ -16,8 +16,8 @@ export default function Home() {
     <Hero />
     <AppsAndIntegrations />
     <AIFeatures />
-    <FeatureSwitcher />
     <FeaturesBentoGrid />
+    <FeatureSwitcher />
     <div className="bg-gradient-to-b from-backgroundLight to-backgroundLighter">
       <RavenGraphic />
       <OpenSource />

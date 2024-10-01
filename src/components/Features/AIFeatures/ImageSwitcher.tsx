@@ -7,17 +7,17 @@ const ImageSwitcher: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState(0);
 
     const options = [
-        { title: 'Collaborative documents', imageSrc: ravenIntegrations },
-        { title: 'Inline comments', imageSrc: ravenIntegrations },
-        { title: 'Text-to-issue commands', imageSrc: ravenIntegrations },
+        { title: 'Extract data from files and images', imageSrc: ravenIntegrations },
+        { title: 'Chain multiple complex tasks', imageSrc: ravenIntegrations },
+        { title: 'Gather info from multiple sources quickly', imageSrc: ravenIntegrations },
     ];
 
     return (
-        <div className="flex flex-col md:flex-row justify-between py-14">
+        <div className="flex flex-col md:flex-row justify-between">
             {/* Text Section */}
             <div className="md:w-1/3 pt-20">
                 <h2 className="text-2xl font-semibold mb-10 w-60">
-                    Ideate and specify what to build next
+                    Build your own bots without writing a single line of code
                 </h2>
                 <ul className="space-y-4">
                     {options.map((option, index) => (

@@ -6,7 +6,7 @@ const Banner: FC = () => {
         <div className="w-full bg-backgroundDark py-16 px-8 flex justify-between items-center">
             <div className="max-w-2xl">
                 <h2 className="font-bold font-calsans mb-6">
-                    <span className="text-gray-400 text-4xl">It&apos;s time</span>
+                    <span className="text-gray-400 text-5xl">It&apos;s time</span>
                     <br />
                     <span className="text-white text-5xl">Send a raven.</span>
                 </h2>
