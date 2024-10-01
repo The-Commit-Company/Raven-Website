@@ -4,7 +4,7 @@ import { FaGithub, FaUsers } from 'react-icons/fa';
 const OpenSourceInfo: React.FC = () => {
 
     return (
-        <div className="lg:w-1/2 space-y-6">
+        <div className="lg:w-1/2 space-y-6 px-8 md:px-0">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-calsans">100% Open Source</h2>
             <p className="text-md md:text-lg text-gray-500 text-left">
                 We believe in complete transparency. You can explore the code,{' '}
