@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import Image from 'next/image';
+import { IoChatboxEllipses } from 'react-icons/io5';
 
 // Define interface for the grid items
 interface GridItemProps {
@@ -53,12 +54,16 @@ const gridItems: GridItemProps[] = [
 // Main Features Grid Component
 const FeaturesBentoGrid: FC = () => {
   return (
-    <div className="md:py-36 py-16 px-4 sm:px-6 md:px-8">
+    <div className="md:pb-36 pb-16 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
       {/* Section heading */}
-      <h2 className="md:text-5xl text-2xl font-bold md:px-0 px-1 text-gray-800 md:mb-12 mb-8 max-w-6xl mx-auto">Everything you need to chat, share and collaborate</h2>
-
+      <div className='flex flex-col gap-2 mb-12'>
+        <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><IoChatboxEllipses /><p>Chat</p></div>
+        <h4 className='text-2xl md:text-6xl font-bold font-calsans'>
+          Everything you need to chat, share and collaborate
+        </h4>
+      </div>
       {/* Responsive grid layout */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 md:gap-6">
         {gridItems.map((item, index) => (
           <GridCard
             key={index}

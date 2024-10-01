@@ -29,17 +29,17 @@ const options: ImageOption[] = [
         description: "Press ⌘K (Ctrl + K on Windows) to search channels, people, messages and files",
     },
     {
+        label: "Google Meet Integration",
+        src: "/assets/GMeetIntegration.png",
+        icon: <FiCalendar />,
+        description: "You can quickly schedule and join meetings right from any channel/ DMs for easy collaboration",
+    },
+    {
         label: "Polls",
         src: "/assets/Polls.png",
         icon: <CgPoll />,
         description: "Polls make it easy to gather feedback and opinions, helping your team make decisions",
     },
-    {
-        label: "Google Meet Integration",
-        src: "/assets/GMeetIntegration.png",
-        icon: <FiCalendar />,
-        description: "You can quickly schedule and join meetings right from any channel/ DMs for easy collaboration",
-    }
 ];
 
 // Main Component

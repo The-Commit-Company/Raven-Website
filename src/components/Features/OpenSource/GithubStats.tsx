@@ -175,7 +175,7 @@ const GithubStats: React.FC = () => {
     return (
         <a className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10 bg-gray-100 md:p-6 p-4 rounded-xl"
             href='https://github.com/The-Commit-Company/raven'>
-            <h3 className="text-2xl font-bold mb-4">Raven</h3>
+            <h3 className="text-2xl font-bold mb-4 font-calsans">raven</h3>
 
             <div className="flex flex-wrap space-x-2 mb-4">
                 <span className="px-3 py-1 border border-gray-300 text-gray-600 rounded-full text-sm">react</span>

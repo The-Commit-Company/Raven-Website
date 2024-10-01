@@ -1,23 +1,26 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { FaRegStar } from 'react-icons/fa';
 
 const GithubRedirectButton = () => {
-
     const [stars, setStars] = useState<number | null>(null);
 
     const githubRepoUrl = 'https://github.com/The-Commit-Company/raven';
 
-    // Keys for localStorage caching
-    const cacheKeys = {
-        stars: 'github-stars',
-        forks: 'github-forks',
-        watchers: 'github-watchers',
-        timestamp: 'github-timestamp',
-    };
+    // Memoize cacheKeys to prevent unnecessary re-renders
+    const cacheKeys = useMemo(
+        () => ({
+            stars: 'github-stars',
+            forks: 'github-forks',
+            watchers: 'github-watchers',
+            timestamp: 'github-timestamp',
+        }),
+        []
+    );
 
-    const fetchRepoData = async () => {
+    // Memoize fetchRepoData to ensure it's a stable reference
+    const fetchRepoData = useCallback(async () => {
         try {
             const response = await fetch('https://api.github.com/repos/The-Commit-Company/raven');
             const data = await response.json();
@@ -33,7 +36,7 @@ const GithubRedirectButton = () => {
         } catch (error) {
             console.error('Error fetching repository data:', error);
         }
-    };
+    }, [cacheKeys]);
 
     useEffect(() => {
         const cachedStars = localStorage.getItem(cacheKeys.stars);
@@ -49,7 +52,7 @@ const GithubRedirectButton = () => {
             // Fetch new data if no valid cache is found
             fetchRepoData();
         }
-    }, []);
+    }, [cacheKeys, fetchRepoData]);
 
     return (
         <div

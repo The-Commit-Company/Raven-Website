@@ -1,15 +1,18 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import ravenIntegrations from '../../../public/assets/RavenIntegrations.png';
+import ravenIntegrations from '../../../../public/assets/RavenIntegrations.png';
+import { LuBox } from 'react-icons/lu';
 
 const AppsAndIntegrations: FC = () => {
     return (
-        <div>
-            <div className='flex flex-col gap-4 px-8'>
-                <h4 className='text-center text-2xl md:text-5xl font-bold font-calsans'>Integrates with any Frappe app</h4>
-                <p className='text-center text-lg md:text-xl text-gray-500'>Raven offers powerful and customizable integrations with apps in the Frappe ecosystem</p>
+        <div className='max-w-6xl mx-auto'>
+            <div className='flex flex-col gap-2'>
+                <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><LuBox /><p>Apps & Integrations</p></div>
+                <h4 className='text-2xl md:text-6xl font-bold font-calsans'>
+                    Raven integrates with any Frappe app
+                </h4>
             </div>
-            <div className="w-full flex justify-center md:px-12 relative">
+            <div className="w-full flex justify-center relative py-12">
                 <div className="absolute inset-0 z-0 bg-grid-pattern bg-gradient-to-r from-transparent via-transparent to-transparent pointer-events-none"></div>
                 <Image
                     src={ravenIntegrations}

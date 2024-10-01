@@ -37,7 +37,7 @@ export default function Navbar() {
             className={`bg-white fixed top-0 w-full pb-3 z-20 transition-all duration-300 ${isScrolled ? 'border-b border-gray-200 shadow-sm' : ''
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
                     {/* Left side of the navbar */}
                     <div className="flex-shrink-0 flex pt-1.5">

@@ -14,7 +14,7 @@ const config: Config = {
         ravenPrimary: "#5753C6",
         buttonDarkGray: "#222326",
         backgroundLight: "#F8F9FA",
-        backgroundLighter: "#FDFDFE",
+        backgroundLighter: "#FFFFFF",
         backgroundDark: "#1C1D1F",
         backgroundDarker: "#18191b",
         borderAccent: "#494b50",
