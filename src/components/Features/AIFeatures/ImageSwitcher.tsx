@@ -24,7 +24,7 @@ const ImageSwitcher: React.FC = () => {
                         <li
                             key={index}
                             className={`cursor-pointer flex items-center text-md font-medium transition-all duration-300 ${selectedOption === index
-                                ? 'text-black'
+                                ? 'text-gray-800 font-semibold'
                                 : 'text-gray-400'
                                 }`}
                             onClick={() => setSelectedOption(index)}

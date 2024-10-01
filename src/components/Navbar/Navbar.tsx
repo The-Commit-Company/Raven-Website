@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
@@ -7,6 +6,7 @@ import { CgClose } from 'react-icons/cg';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -34,14 +34,14 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`bg-white fixed top-0 w-full z-10 transition-all duration-300 ${isScrolled ? 'border-b border-gray-200 shadow-sm' : ''
+            className={`bg-white fixed top-0 w-full pb-3 z-20 transition-all duration-300 ${isScrolled ? 'border-b border-gray-200 shadow-sm' : ''
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
+                <div className="flex items-center justify-between">
                     {/* Left side of the navbar */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-3xl font-bold text-gray-800 font-calsans">
+                    <div className="flex-shrink-0 flex pt-1.5">
+                        <Link href="/" className="text-3xl text-gray-800 leading-none font-calsans">
                             raven
                         </Link>
                     </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Links for larger screens */}
-                    <div className="hidden sm:flex sm:space-x-8 sm:items-center text-[14px]">
+                    <div className="hidden sm:flex sm:space-x-8 sm:items-center text-sm pt-3">
                         <Link href="https://github.com/The-Commit-Company/raven" className={styles.linkHover}>
                             Github
                         </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Start for free button */}
-                    <div className="hidden sm:flex sm:space-x-4 sm:items-center">
+                    <div className="hidden sm:flex sm:space-x-4 sm:items-center pt-3">
                         <Link href="#" className="bg-black text-white px-3 py-1.5 text-sm rounded-md transition-all duration-200 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 hover:shadow-md">
                             Start for free
                         </Link>
