@@ -20,4 +20,9 @@
     .bg-fade-out {
         mask-image: radial-gradient(ellipse at center, white 70%, transparent 100%);
     }
+
+    .dot-pattern {
+        background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+        background-size: 16px 16px;
+    }
 }

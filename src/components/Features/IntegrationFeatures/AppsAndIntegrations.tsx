@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import ravenIntegrations from '../../../../public/assets/RavenIntegrations.png';
 import { LuBox } from 'react-icons/lu';
+import IntegrationsBento from './IntegrationsBento';
 
 const AppsAndIntegrations: FC = () => {
     return (
@@ -12,7 +13,7 @@ const AppsAndIntegrations: FC = () => {
                     Integrate with any Frappe app
                 </h4>
             </div>
-            <div className="w-full flex justify-center relative pt-12">
+            <div className="w-full flex justify-center relative my-8 md:my-12">
                 <div className="absolute inset-0 z-0 bg-grid-pattern bg-gradient-to-r from-transparent via-transparent to-transparent pointer-events-none"></div>
                 <Image
                     src={ravenIntegrations}
@@ -21,6 +22,8 @@ const AppsAndIntegrations: FC = () => {
                     className="relative"
                 />
             </div>
+
+            <IntegrationsBento />
         </div>
     )
 }
