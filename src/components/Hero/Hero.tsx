@@ -3,8 +3,7 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronRight } from 'react-icons/fi';
-import Image from 'next/image';
-import heroImage from '../../../public/assets/Hero.png';
+import VideoWithPlayButton from './VideoWithPlayButton';
 
 const Hero: FC = () => {
     return (
@@ -38,19 +37,12 @@ const Hero: FC = () => {
                         </button>
                     </div>
                     <p className="text-[14px] text-gray-600 mt-4">
-                        200+ Active sites on Frappe Cloud 🚀
+                        200+ active sites on Frappe Cloud 🚀
                     </p>
 
-                    {/* Image */}
-                    <div className="relative shadow-sm rounded-md my-10 md:my-12 px-3 md:px-0">
-                        <Image
-                            src={heroImage}
-                            className='border border-gray-100 rounded-md'
-                            alt="Raven app image"
-                            width={1152}
-                            height={700}
-                            style={{ objectFit: "cover" }}
-                        />
+                    {/* Video */}
+                    <div className="relative border border-gray-200 rounded-md my-10 md:my-12 px-3 md:px-0">
+                        <VideoWithPlayButton />
                     </div>
                 </div>
             </div>
