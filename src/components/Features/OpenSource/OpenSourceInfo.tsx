@@ -14,12 +14,12 @@ const OpenSourceInfo: React.FC = () => {
             <div className="flex space-x-4">
                 <a href="https://github.com/The-Commit-Company/raven"
                     className="flex justify-center items-center px-3 md:px-6 py-3 md:text-base lg:text-base text-sm bg-black text-white rounded-lg transition-all duration-200 hover:bg-gray-800">
-                    <FaGithub size={18} className="mr-2" />
+                    <FaGithub size={18} className="mr-2 hidden sm:block" />
                     View Repository
                 </a>
                 <a href="https://community.ravenapp.cloud"
                     className="flex justify-center items-center px-3 md:px-6 py-3 md:text-base lg:text-base text-sm border border-gray-300 text-gray-800 rounded-lg transition-all duration-200 hover:border-gray-800">
-                    <FaUsers size={18} className="mr-2" />
+                    <FaUsers size={18} className="mr-2 hidden sm:block" />
                     Join Community
                 </a>
             </div>
