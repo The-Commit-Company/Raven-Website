@@ -22,7 +22,7 @@
     }
 
     .dot-pattern {
-        background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+        background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
         background-size: 16px 16px;
     }
 }
