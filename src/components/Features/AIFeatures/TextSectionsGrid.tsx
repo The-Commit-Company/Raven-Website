@@ -12,12 +12,12 @@ interface TextSectionProps {
 
 const TextSection: React.FC<TextSectionProps> = ({ icon, heading, subtext }) => {
     return (
-        <div className="flex flex-col text-[15px]">
-            <div className="flex items-center gap-3 mb-2">
-                <div className="text-md">{icon}</div>
-                <h3 className="font-semibold">{heading}</h3>
+        <div className="flex flex-col">
+            <div className="flex md:items-center gap-3 mb-2 flex-col md:flex-row">
+                <div className="text-lg md:text-md">{icon}</div>
+                <h3 className="font-semibold text-sm md:text-base">{heading}</h3>
             </div>
-            <p className="text-gray-500">{subtext}</p>
+            <p className="text-gray-500 text-sm md:text-base">{subtext}</p>
         </div>
     );
 };
