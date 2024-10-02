@@ -44,16 +44,19 @@ const RavenInDesk: React.FC = () => {
         <div className="relative overflow-hidden rounded-xl flex items-center justify-center">
             {/* Dotted Background */}
             <div className="absolute inset-0 dot-pattern"></div>
-            <div className="relative p-4">
-                <video
-                    src={'assets/RavenInDesk.mp4'}
-                    className="rounded-xl border border-gray-100"
-                    width={1000}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                ></video>
+            <div className='flex flex-col p-4'>
+                <h2 className="text-2xl font-semibold mb-4">Use raven directly from your ERPNext desk interface</h2>
+                <div className="relative">
+                    <video
+                        src={'assets/RavenInDesk.mp4'}
+                        className="rounded-xl border border-gray-100"
+                        width={1000}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    ></video>
+                </div>
             </div>
         </div>
     );

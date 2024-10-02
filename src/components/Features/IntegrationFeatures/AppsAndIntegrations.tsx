@@ -18,7 +18,7 @@ const AppsAndIntegrations: FC = () => {
                 <Image
                     src={ravenIntegrations}
                     alt="Raven Integration Graphic"
-                    width={900}
+                    width={1000}
                     className="relative"
                 />
             </div>
