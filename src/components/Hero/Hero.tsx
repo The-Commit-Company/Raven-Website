@@ -19,11 +19,11 @@ const Hero: FC = () => {
                 transition={{ duration: 0.7 }}>
                 Chat + AI for your business
             </motion.h1>
-            <p className="text-sm font-medium sm:text-lg md:text-lg text-gray-600 mb-12 md:w-1/2 lg:w-2/6">
+            <p className="text-sm font-medium sm:text-lg md:text-lg text-gray-600 mb-10 md:mb-12 md:w-1/2 lg:w-2/6">
                 Enterprise-first messaging platform that seamlessly integrates with your ERP
             </p>
 
-            <div className="h-[50rem] w-full relative flex items-center justify-center">
+            <div className="md:h-[50rem] w-full relative flex items-center justify-center">
                 {/* Radial Gradient Fade Effect */}
                 <div className="absolute inset-0 pointer-events-none bg-grid-pattern-dark bg-fade-out"></div>
 
@@ -42,7 +42,7 @@ const Hero: FC = () => {
                     </p>
 
                     {/* Image */}
-                    <div className="relative shadow-sm rounded-md my-12">
+                    <div className="relative shadow-sm rounded-md my-10 md:my-12 px-3 md:px-0">
                         <Image
                             src={heroImage}
                             className='border border-gray-100 rounded-md'

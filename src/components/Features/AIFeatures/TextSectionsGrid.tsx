@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiMessageDetail } from 'react-icons/bi';
+import { CgToolbox } from 'react-icons/cg';
 import { LuFunctionSquare } from 'react-icons/lu';
-import { PiToolboxFill } from 'react-icons/pi';
 import { RiExchange2Line } from 'react-icons/ri';
 
 interface TextSectionProps {
@@ -12,19 +12,19 @@ interface TextSectionProps {
 
 const TextSection: React.FC<TextSectionProps> = ({ icon, heading, subtext }) => {
     return (
-        <div className="flex flex-col">
-            <div className="flex items-center gap-4 mb-2">
+        <div className="flex flex-col text-[15px]">
+            <div className="flex items-center gap-3 mb-2">
                 <div className="text-md">{icon}</div>
-                <h3 className="text-sm font-semibold">{heading}</h3>
+                <h3 className="font-semibold">{heading}</h3>
             </div>
-            <p className="text-sm text-gray-500">{subtext}</p>
+            <p className="text-gray-500">{subtext}</p>
         </div>
     );
 };
 
 const TextSectionsGrid: React.FC = () => {
     return (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-14 border-t border-gray-50">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-14 border-t border-gray-100">
             <TextSection
                 icon={<BiMessageDetail />}
                 heading="Context Aware Threads"
@@ -41,7 +41,7 @@ const TextSectionsGrid: React.FC = () => {
                 subtext="Call functions within ERPNext to perform tasks like fetching/ creating documents."
             />
             <TextSection
-                icon={<PiToolboxFill />}
+                icon={<CgToolbox />}
                 heading="Tools"
                 subtext="AI can read and scan files with file search, vision and code interpreter."
             />
