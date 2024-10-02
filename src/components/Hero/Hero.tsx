@@ -18,7 +18,7 @@ const Hero: FC = () => {
                 transition={{ duration: 0.7 }}>
                 Chat + AI for your business
             </motion.h1>
-            <p className="text-sm font-medium sm:text-lg md:text-lg text-gray-600 mb-10 md:mb-12 md:w-1/2 lg:w-2/6">
+            <p className="text-sm font-medium sm:text-lg md:text-lg text-gray-600 mb-10 md:w-1/2 lg:w-2/6">
                 Enterprise-first messaging platform that seamlessly integrates with your ERP
             </p>
 
@@ -41,7 +41,7 @@ const Hero: FC = () => {
                     </p>
 
                     {/* Video */}
-                    <div className="relative border border-gray-200 rounded-md my-10 md:my-12 px-3 md:px-0">
+                    <div className="relative my-10 md:my-12 px-3 md:px-0">
                         <VideoWithPlayButton />
                     </div>
                 </div>

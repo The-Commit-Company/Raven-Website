@@ -22,7 +22,7 @@ const VideoWithPlayButton = () => {
         <div className="relative">
             <video
                 ref={videoRef}
-                className="rounded-md"
+                className="rounded-md border border-gray-200"
                 width={1000}
                 src={'assets/HeroVideo.mp4'}
                 muted
