@@ -30,8 +30,8 @@ const RavenIntegrations: React.FC = () => {
     return (
         <div className="relative overflow-hidden rounded-xl">
             {/* Dotted Background */}
-            <div className="absolute inset-0 bg-grid-pattern"></div>
-            <div className="relative p-8">
+            <div className="absolute inset-0 dot-pattern"></div>
+            <div className="relative p-4 md:p-8">
                 <Image
                     src={ravenIntegrations}
                     alt="Raven Integrations"
@@ -66,7 +66,7 @@ const RavenInDesk: React.FC = () => {
             {/* Dotted Background */}
             <div className="absolute inset-0 dot-pattern"></div>
             <div className='flex flex-col p-4'>
-                <h2 className="text-2xl font-semibold mb-4">Use raven directly from your ERPNext desk interface</h2>
+                <h2 className="text-xl md:text-2xl font-semibold mb-4">Use raven directly from your ERPNext desk interface</h2>
                 <div className="relative">
                     <video
                         src={'assets/RavenInDesk.mp4'}
