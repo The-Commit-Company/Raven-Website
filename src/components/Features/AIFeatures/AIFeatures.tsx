@@ -1,7 +1,7 @@
 import React from 'react';
 import TextSectionsGrid from './TextSectionsGrid';
-import ImageSwitcher from './ImageSwitcher';
 import { HiSparkles } from 'react-icons/hi';
+import VideoSwitcher from './VideoSwitcher';
 
 const AIFeatures: React.FC = () => {
     return (
@@ -13,7 +13,7 @@ const AIFeatures: React.FC = () => {
                 </h4>
             </div>
             <div className="flex flex-col gap-10 md:gap-16">
-                <ImageSwitcher />
+                <VideoSwitcher />
                 <TextSectionsGrid />
             </div>
         </div>
