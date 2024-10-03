@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // import localFont from "next/font/local";
 import "./globals.css";
 import "cal-sans";
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

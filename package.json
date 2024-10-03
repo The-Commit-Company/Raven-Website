@@ -11,6 +11,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.12",
     "cal-sans": "^1.0.1",
     "chart.js": "^4.4.4",
     "framer-motion": "^11.5.4",
