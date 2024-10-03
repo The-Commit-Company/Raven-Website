@@ -32,9 +32,11 @@ const Hero: FC = () => {
                         <button className="px-4 py-2 text-base bg-black text-white rounded-lg transition-all duration-200 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 hover:shadow-lg">
                             Get started
                         </button>
-                        <button className="px-4 py-2 text-base bg-white border border-gray-300 text-gray-800 rounded-lg transition-all duration-200 hover:border-gray-800 hover:shadow-md">
+                        <a
+                            href={'https://cal.com/nikkothari22/send-a-raven'} target='_blank' rel='noreferrer'
+                            className="px-4 py-2 text-base bg-white border border-gray-300 text-gray-800 rounded-lg transition-all duration-200 hover:border-gray-800 hover:shadow-md">
                             Request a demo
-                        </button>
+                        </a>
                     </div>
                     <p className="text-[14px] text-gray-600 mt-4">
                         200+ active sites on Frappe Cloud 🚀

@@ -15,9 +15,11 @@ const Banner: FC = () => {
                 <button className="px-6 py-2 bg-white text-gray-600 font-semibold rounded hover:bg-gray-200 transition-colors duration-200">
                     Try for free
                 </button>
-                <button className="px-6 py-2 border border-gray-500 text-gray-200 font-semibold rounded hover:bg-buttonDarkGray transition-colors duration-200">
+                <a
+                    href={'https://cal.com/nikkothari22/send-a-raven'} target='_blank' rel='noreferrer'
+                    className="px-6 py-2 border border-gray-500 text-gray-200 font-semibold rounded hover:bg-buttonDarkGray transition-colors duration-200">
                     Request a demo
-                </button>
+                </a>
             </div>
         </div>
     );
