@@ -23,7 +23,7 @@ const VideoWithPlayButton = () => {
             <video
                 ref={videoRef}
                 poster={'assets/HeroVideoCover.png'}
-                className="rounded-md border border-gray-200"
+                className="rounded-md md:rounded-xl border border-gray-200"
                 width={1000}
                 src={'assets/HeroVideo.mp4'}
                 muted
