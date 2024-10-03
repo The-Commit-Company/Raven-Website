@@ -12,9 +12,11 @@ const Banner: FC = () => {
                 </h2>
             </div>
             <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
-                <button className="px-6 py-2 bg-white text-gray-600 font-semibold rounded hover:bg-gray-200 transition-colors duration-200">
+                <a
+                    href={'https://frappecloud.com/marketplace/apps/raven'} target='_blank' rel='noreferrer'
+                    className="px-6 py-2 bg-white text-gray-600 font-semibold rounded hover:bg-gray-200 transition-colors duration-200">
                     Try for free
-                </button>
+                </a>
                 <a
                     href={'https://cal.com/nikkothari22/send-a-raven'} target='_blank' rel='noreferrer'
                     className="px-6 py-2 border border-gray-500 text-gray-200 font-semibold rounded hover:bg-buttonDarkGray transition-colors duration-200">
