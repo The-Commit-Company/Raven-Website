@@ -8,7 +8,7 @@ const Footer: FC = () => {
         <footer className="relative bg-backgroundDark text-gray-300 pt-8 md:pb-24 pb-12 px-8 border-t border-borderAccentDark overflow-hidden">
             <div className="mx-auto flex flex-col md:flex-row justify-between items-center md:items-start relative z-10 space-y-6 md:space-y-0">
                 <div className="flex flex-col items-center md:items-start">
-                    <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} The Commit Company</p>
+                    <p className="text-sm text-gray-400">Made with ♡ by The Commit Company</p>
                 </div>
                 <div className="w-full md:w-auto flex justify-center md:justify-start items-center space-x-4">
                     <a href='https://github.com/The-Commit-Company/raven' className='text-gray-400 hover:text-white'>
