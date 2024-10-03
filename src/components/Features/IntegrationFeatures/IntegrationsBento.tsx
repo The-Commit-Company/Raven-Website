@@ -16,14 +16,14 @@ const IntegrationsBento: React.FC = () => {
                     <HRIntegrationExample />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-4 md:gap-6">
-                    <div className="h-1/2 rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100">
+                    <div className="h-3/5 md:h-1/2 rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100">
                         <ContentCard
                             title="Share any document link from your ERP"
                             subtitle="Documents from your ERP can be shared with customizable previews and users can run workflows or print them directly from raven"
                             imageSrc={workflowActions}
                         />
                     </div>
-                    <div className="h-1/2 rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100">
+                    <div className="h-2/5 md:h-1/2 rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100">
                         <ContentCard
                             title="Title"
                             subtitle="Subtitle"
@@ -76,7 +76,7 @@ const HRIntegrationExample: React.FC = () => {
                     <Image
                         src={hrIntegration}
                         alt="HR Integration Example"
-                        width={450}
+                        width={440}
                     />
                 </div>
             </div>
