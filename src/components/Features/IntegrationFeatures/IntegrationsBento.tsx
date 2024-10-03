@@ -25,8 +25,8 @@ const IntegrationsBento: React.FC = () => {
                     </div>
                     <div className="h-2/5 md:h-1/2 rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100">
                         <ContentCard
-                            title="Title"
-                            subtitle="Subtitle"
+                            title="Build custom integrations"
+                            subtitle='Heres one with Frappe HR'
                             imageSrc={frappeHRLeave}
                         />
                     </div>
