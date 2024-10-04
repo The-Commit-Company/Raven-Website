@@ -1,23 +1,29 @@
 import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-// import localFont from "next/font/local";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import "cal-sans";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
 
 export const metadata: Metadata = {
   title: "Raven",
   description: "Raven is an open source chat application, built using Frappe Framework.",
+  viewport: "width=device-width, initial-scale=1",  // Meta tag for responsive design
+  keywords: "Raven, Frappe Framework, raven AI, messaging app, work chat, open source",  // Keywords for SEO
+  openGraph: {
+    title: "Raven - Chat + AI for your business",
+    description: "Use Raven, an open-source chat application for the Frappe ecosystem.",
+    url: "https://ravenchat.ai",
+    siteName: "Raven Chat",
+    images: [
+      {
+        url: "assets/HeroVideoCover.png",  // Path to your OG image
+        width: 800,
+        height: 600,
+        alt: "Raven Website Cover Image",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -27,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
+      <body className="antialiased">
         {children}
         <SpeedInsights />
       </body>
