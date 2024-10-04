@@ -6,9 +6,9 @@ const VideoSwitcher: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState(0);
 
     const options = [
-        { title: 'Extract data from files and images', videoSrc: 'assets/DataImporter.mp4', poster: 'assets/DataImporterPreview.png' },
-        { title: 'Chain multiple complex tasks', videoSrc: '', poster: '' },
-        { title: 'Gather info from multiple sources quickly', videoSrc: '', poster: '' },
+        { title: 'Extract data from files and images', videoSrc: 'assets/FileReadingAI.mp4', poster: 'assets/FileReadingAIPreview.png' },
+        { title: 'Chain multiple complex tasks', videoSrc: 'assets/DataImporter.mp4', poster: 'assets/DataImporterPreview.png' },
+        { title: 'Gather info from multiple sources quickly', videoSrc: 'assets/MultipleSourcesAI.mp4', poster: 'assets/MultipleSourcesAIPreview.png' },
     ];
 
     return (
