@@ -8,10 +8,15 @@ import { BiMessageDetail, BiSearchAlt } from 'react-icons/bi';
 import { CgPoll } from 'react-icons/cg';
 import { FiCalendar } from 'react-icons/fi';
 import { GiDiamonds } from 'react-icons/gi';
+import Image, { StaticImageData } from 'next/image';
+import threads from '../../../../public/assets/Threads.png';
+import search from '../../../../public/assets/Search.png';
+import gmeetIntegration from '../../../../public/assets/GMeetIntegration.png';
+import polls from '../../../../public/assets/Polls.png';
 
 type ImageOption = {
     label: string;
-    src: string;
+    src: StaticImageData;
     icon: React.ReactNode;
     description: string;
 };
@@ -19,25 +24,25 @@ type ImageOption = {
 const options: ImageOption[] = [
     {
         label: "Threads",
-        src: "/assets/Threads.png",
+        src: threads,
         icon: <BiMessageDetail />,
         description: "Threads help keep your conversations organized, making discussions easier to follow and manage",
     },
     {
         label: "Search",
-        src: "/assets/Search.png",
+        src: search,
         icon: <BiSearchAlt />,
         description: "Press ⌘K (Ctrl + K on Windows) to search channels, people, messages and files",
     },
     {
         label: "Google Meet Integration",
-        src: "/assets/GMeetIntegration.png",
+        src: gmeetIntegration,
         icon: <FiCalendar />,
         description: "You can quickly schedule and join meetings right from any channel/ DMs for easy collaboration",
     },
     {
         label: "Polls",
-        src: "/assets/Polls.png",
+        src: polls,
         icon: <CgPoll />,
         description: "Polls make it easy to gather feedback and opinions, helping your team make decisions",
     },
@@ -101,10 +106,11 @@ const FeatureSwitcher: FC = () => {
 
                                     {/* Image Section */}
                                     <div className="relative h-full rounded-lg border border-gray-100  overflow-hidden">
-                                        <img
+                                        <Image
                                             src={selectedOption.src}
                                             alt={selectedOption.label}
-                                            className="object-cover w-full h-full"
+                                            objectFit="cover"
+                                            className="w-full h-auto"
                                         />
                                     </div>
                                 </div>
@@ -137,7 +143,7 @@ interface FeatureSlideProps {
     icon: ReactNode;
     title: string;
     description: string;
-    imageSrc: string;
+    imageSrc: StaticImageData;
 }
 
 const FeatureSlide: FC<FeatureSlideProps> = ({ icon, title, description, imageSrc }) => {
@@ -156,10 +162,11 @@ const FeatureSlide: FC<FeatureSlideProps> = ({ icon, title, description, imageSr
 
             {/* Image Section */}
             <div className="w-full mt-6 rounded-md border border-gray-100 overflow-hidden">
-                <img
+                <Image
                     src={imageSrc}
                     alt={title}
-                    className="object-cover w-full h-full"
+                    objectFit="cover"
+                    className="w-full h-auto"
                 />
             </div>
         </div>

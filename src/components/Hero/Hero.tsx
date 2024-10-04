@@ -1,7 +1,6 @@
 'use client';
 
 import { FC } from 'react';
-import { motion } from 'framer-motion';
 import { FiChevronRight } from 'react-icons/fi';
 import VideoWithPlayButton from './VideoWithPlayButton';
 
@@ -11,13 +10,9 @@ const Hero: FC = () => {
             <div className="flex justify-center items-center gap-2 mb-4 pl-4 pr-2 py-1 bg-gradient-to-r from-gray-100 to-white border border-gray-200 rounded-full shadow-base text-gray-600 text-[12px] font-medium tracking-wide hover:cursor-pointer hover:outline-double hover:outline-blue-100">
                 Introducing Raven AI ✨ <FiChevronRight color='gray' />
             </div>
-            <motion.h1
-                className="text-6xl sm:text-5xl md:text-7xl lg:text-[81px] mb-8 md:w-1/3 lg:w-2/5 font-extrabold font-calsans"
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}>
+            <div className="text-6xl sm:text-5xl md:text-7xl lg:text-[81px] mb-8 md:w-1/3 lg:w-2/5 font-extrabold font-calsans">
                 Chat + AI for your business
-            </motion.h1>
+            </div>
             <p className="text-sm font-medium sm:text-lg md:text-lg text-gray-600 mb-10 md:w-1/2 lg:w-2/6">
                 Enterprise-first messaging platform that seamlessly integrates with your ERP
             </p>
