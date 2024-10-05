@@ -10,7 +10,7 @@ const Hero: FC = () => {
             <div className="flex justify-center items-center gap-2 mb-4 pl-4 pr-2 py-1 bg-gradient-to-r from-gray-100 to-white border border-gray-200 rounded-full shadow-base text-gray-600 text-[12px] font-medium tracking-wide hover:cursor-pointer hover:outline-double hover:outline-blue-100">
                 Introducing Raven AI ✨ <FiChevronRight color='gray' />
             </div>
-            <div className="text-6xl sm:text-5xl md:text-7xl lg:text-[81px] mb-8 md:w-1/3 lg:w-2/5 font-extrabold font-calsans">
+            <div className="text-5xl sm:text-5xl md:text-7xl lg:text-[81px] mb-8 md:w-1/3 lg:w-2/5 font-extrabold font-calsans">
                 Chat + AI for your business
             </div>
             <p className="text-sm font-medium sm:text-lg md:text-lg text-gray-600 mb-10 md:w-1/2 lg:w-2/6">
