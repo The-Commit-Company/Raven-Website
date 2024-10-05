@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Raven Chat",
     images: [
       {
-        url: "assets/HeroVideoCover.png",  // Path to your OG image
+        url: "assets/MetaImage.png",  // Path to your OG image
         width: 800,
         height: 600,
         alt: "Raven Website Cover Image",
