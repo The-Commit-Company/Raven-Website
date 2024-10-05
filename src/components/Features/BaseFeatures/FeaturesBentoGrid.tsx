@@ -58,9 +58,9 @@ const FeaturesBentoGrid: FC = () => {
       {/* Section heading */}
       <div className='flex flex-col gap-2 mb-12'>
         <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><IoChatboxEllipses /><p>Chat</p></div>
-        <h4 className='text-4xl md:text-6xl font-bold font-calsans'>
+        <h2 className='text-4xl md:text-5xl font-bold font-calsans'>
           Chat, share, and collaborate
-        </h4>
+        </h2>
       </div>
       {/* Responsive grid layout */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 md:gap-6">

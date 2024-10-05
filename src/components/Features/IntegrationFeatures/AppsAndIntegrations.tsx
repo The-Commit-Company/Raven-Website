@@ -7,9 +7,9 @@ const AppsAndIntegrations: FC = () => {
         <div className='flex flex-col gap-12 justify-center md:pb-36 pb-16 max-w-6xl mx-auto px-8 md:px-0'>
             <div className='flex flex-col gap-2'>
                 <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><LuBox /><p>Apps & Integrations</p></div>
-                <h4 className='text-4xl md:text-6xl font-bold font-calsans'>
+                <h2 className='text-4xl md:text-5xl font-bold font-calsans'>
                     Integrate with any Frappe app
-                </h4>
+                </h2>
             </div>
             <IntegrationsBento />
         </div>

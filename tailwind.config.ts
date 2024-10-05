@@ -21,7 +21,7 @@ const config: Config = {
         borderAccentDark: "#2c2d30"
       },
       fontFamily: {
-        calsans: ['Cal Sans', 'sans-serif'],
+        calsans: ['var(--font-calsans)', 'sans-serif'],
       },
     },
   },
