@@ -91,15 +91,20 @@ const FeatureSwitcher: FC = () => {
                             <div className="relative w-full md:p-8 p-4 bg-white">
                                 {/* Desktop/Web: Only show the selected image */}
                                 <div className="hidden md:block">
-                                    <div className="grid grid-cols-4 gap-8 mb-10 text-left">
+                                    <div role="listbox" aria-label="Feature options" className="grid grid-cols-4 gap-8 mb-10 text-left">
                                         {options.map((opt) => (
                                             <div
                                                 key={opt.label}
                                                 onClick={() => setSelectedOption(opt)}
                                                 className="cursor-pointer"
-                                                aria-current={selectedOption.label === opt.label ? 'true' : 'false'}
                                                 role="option"
                                                 aria-selected={selectedOption.label === opt.label}
+                                                tabIndex={0}
+                                                onKeyPress={(e) => {
+                                                    if (e.key === 'Enter' || e.key === ' ') {
+                                                        setSelectedOption(opt);
+                                                    }
+                                                }}
                                             >
                                                 <FeatureButton
                                                     icon={opt.icon}
@@ -112,7 +117,7 @@ const FeatureSwitcher: FC = () => {
                                     </div>
 
                                     {/* Image Section */}
-                                    <div className="relative h-full rounded-lg border border-gray-100  overflow-hidden">
+                                    <div className="relative h-full rounded-lg border border-gray-100 overflow-hidden">
                                         <Image
                                             src={selectedOption.src}
                                             alt={selectedOption.label}

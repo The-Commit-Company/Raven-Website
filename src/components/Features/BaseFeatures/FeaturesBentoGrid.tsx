@@ -19,7 +19,10 @@ const gridItems: GridItemProps[] = [
     title: 'Craft your messages with rich text',
     description: 'Easily send messages with formatting, highlights, links, emojis, code blocks, mentions and more',
     image: <div className="border border-gray-100 rounded-md shadow-sm">
-      <video src="/assets/MessageFormatting.mov" width={800} height={200} playsInline autoPlay muted loop className="rounded-md" />
+      <video src="/assets/MessageFormatting.mov" width={800} height={200} playsInline autoPlay muted loop className="rounded-md">
+        {/* If there's no need for captions, indicate that with a track element */}
+        <track kind="captions" srcLang="en" label="No captions available" default />
+      </video>
     </div>,
     className: 'md:col-span-2',
     headingPosition: 'below',

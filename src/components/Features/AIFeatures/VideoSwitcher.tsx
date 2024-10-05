@@ -6,7 +6,6 @@ const VideoSwitcher: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [videoSrc, setVideoSrc] = useState('');
 
-    // Memoize the options array to avoid recreating it on every render
     const options = useMemo(() => [
         { title: 'Extract data from files and images', videoSrc: 'assets/FileReadingAI.mp4', poster: 'assets/FileReadingAIPreview.png' },
         { title: 'Chain multiple complex tasks', videoSrc: 'assets/DataImporter.mp4', poster: 'assets/DataImporterPreview.png' },
@@ -37,7 +36,7 @@ const VideoSwitcher: React.FC = () => {
         return () => {
             observer.unobserve(currentVideo); // Clean up the observer
         };
-    }, [selectedOption, options]); // Now options is a stable reference due to useMemo
+    }, [selectedOption, options]);
 
     return (
         <div className="flex flex-col md:flex-row justify-between">
@@ -46,18 +45,23 @@ const VideoSwitcher: React.FC = () => {
                 <h2 className="text-xl font-semibold mb-10 md:w-60">
                     Build your own bots without writing a single line of code
                 </h2>
-                <ul className="space-y-4 mb-10 md:mb-0">
+                <div role="listbox" aria-label="Video options" className='space-y-4 mb-10 md:mb-0'>
                     {options.map((option, index) => (
-                        <li
+                        <div
                             key={index}
                             className={`cursor-pointer flex items-center text-md font-medium transition-all duration-300 ${selectedOption === index
                                 ? 'text-gray-800 font-semibold'
                                 : 'text-gray-400'
                                 }`}
                             onClick={() => setSelectedOption(index)}
-                            aria-current={selectedOption === index ? 'true' : 'false'}
                             role="option"
                             aria-selected={selectedOption === index}
+                            tabIndex={0}
+                            onKeyPress={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    setSelectedOption(index);
+                                }
+                            }}
                         >
                             <div
                                 className={`h-6 w-1 mr-4 rounded-full transition-all duration-300 ${selectedOption === index
@@ -67,9 +71,9 @@ const VideoSwitcher: React.FC = () => {
                                 aria-hidden="true"
                             ></div>
                             {option.title}
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
 
             {/* Video Section */}
@@ -80,7 +84,7 @@ const VideoSwitcher: React.FC = () => {
                         <video
                             ref={videoRef}
                             poster={options[selectedOption].poster}
-                            src={videoSrc} // Lazy load the video src
+                            src={videoSrc}
                             muted
                             loop
                             playsInline
@@ -89,6 +93,8 @@ const VideoSwitcher: React.FC = () => {
                             aria-label={options[selectedOption].title}
                         >
                             Your browser does not support the video tag.
+                            {/* If there's no need for captions, indicate that with a track element */}
+                            <track kind="captions" srcLang="en" label="No captions available" default />
                         </video>
                     </div>
                 </div>

@@ -108,7 +108,10 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, videoSrc, im
                             loop
                             muted
                             playsInline
-                        ></video>
+                        >
+                            {/* If there's no need for captions, indicate that with a track element */}
+                            <track kind="captions" srcLang="en" label="No captions available" default />
+                        </video>
                     )}
                     {imageSrc && (
                         <Image

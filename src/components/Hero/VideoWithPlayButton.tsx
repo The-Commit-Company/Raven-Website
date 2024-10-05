@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { FaCirclePlay } from 'react-icons/fa6';
 
 const VideoWithPlayButton = () => {
-
     const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -29,7 +28,10 @@ const VideoWithPlayButton = () => {
                 muted
                 playsInline
                 onClick={togglePlayPause}
-            ></video>
+            >
+                {/* If there's no need for captions, indicate that with a track element */}
+                <track kind="captions" srcLang="en" label="No captions available" default />
+            </video>
             {!isPlaying && (
                 <button
                     aria-label='Play Video'
