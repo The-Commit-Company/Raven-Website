@@ -23,7 +23,7 @@ const VideoWithPlayButton = () => {
             <video
                 ref={videoRef}
                 poster={'assets/HeroVideoCover.png'}
-                className="rounded-md md:rounded-xl border border-gray-200"
+                className="rounded-md md:rounded-xl border border-gray-200 object-cover"
                 width={1000}
                 src={'assets/HeroVideo.mp4'}
                 muted
@@ -32,6 +32,8 @@ const VideoWithPlayButton = () => {
             ></video>
             {!isPlaying && (
                 <button
+                    aria-label='Play Video'
+                    title='Play Video'
                     className="absolute inset-0 flex items-center justify-center text-4xl rounded-md"
                     onClick={togglePlayPause}
                 >

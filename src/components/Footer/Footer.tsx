@@ -11,16 +11,20 @@ const Footer: FC = () => {
                     <p className="text-sm text-gray-400">Made with ♡ by The Commit Company</p>
                 </div>
                 <div className="w-full md:w-auto flex justify-center md:justify-start items-center space-x-4">
-                    <a href='https://github.com/The-Commit-Company/raven' className='text-gray-400 hover:text-white'>
+                    <a aria-label="Github"
+                        href='https://github.com/The-Commit-Company/raven' className='text-gray-400 hover:text-white'>
                         <FaGithub className='w-5 h-5' />
                     </a>
-                    <a href="https://x.com/ravenchat_ai?s=21" className="text-gray-400 hover:text-white">
+                    <a aria-label="X (Previously) Twitter"
+                        href="https://x.com/ravenchat_ai?s=21" className="text-gray-400 hover:text-white">
                         <FaXTwitter className="w-5 h-5" />
                     </a>
-                    <a href="https://www.linkedin.com/company/the-commit-company" className="text-gray-400 hover:text-white">
+                    <a aria-label="LinkedIn"
+                        href="https://www.linkedin.com/company/the-commit-company" className="text-gray-400 hover:text-white">
                         <FaLinkedin className="w-5 h-5" />
                     </a>
-                    <a href="https://www.youtube.com/channel/UCsAWxDJJ62pIOyq8QIo86fA" className="text-gray-400 hover:text-white">
+                    <a aria-label="YouTube"
+                        href="https://www.youtube.com/channel/UCsAWxDJJ62pIOyq8QIo86fA" className="text-gray-400 hover:text-white">
                         <FaYoutube className="w-5 h-5" />
                     </a>
                     {/* Github Button inline */}

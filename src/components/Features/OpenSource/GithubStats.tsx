@@ -173,7 +173,7 @@ const GithubStats: React.FC = () => {
     };
 
     return (
-        <a className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10 bg-gray-100 md:p-6 p-4 rounded-xl"
+        <a aria-label="Github" className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10 bg-gray-100 md:p-6 p-4 rounded-xl"
             href='https://github.com/The-Commit-Company/raven'>
             <h3 className="text-2xl font-bold mb-4 font-calsans">raven</h3>
 
