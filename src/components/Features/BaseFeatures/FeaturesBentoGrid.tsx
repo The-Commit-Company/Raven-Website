@@ -61,7 +61,7 @@ const FeaturesBentoGrid: FC = () => {
       {/* Section heading */}
       <div className='flex flex-col gap-2 mb-12'>
         <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><IoChatboxEllipses /><p>Chat</p></div>
-        <h2 className='text-4xl md:text-5xl font-bold font-calsans'>
+        <h2 className='text-4xl sm:text-4xl md:text-5xl font-bold font-calsans'>
           Chat, share, and collaborate
         </h2>
       </div>
@@ -87,7 +87,7 @@ const GridCard: FC<GridItemProps> = ({ title, description, image, className, hea
   <div className={`bg-white rounded-xl shadow-xs border-4 border-gray-50 outline outline-gray-100 p-4 sm:p-6 flex flex-col justify-between items-start ${className}`}>
     {headingPosition === 'above' && (
       <div className="mb-4">
-        <h2 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">{title}</h2>
+        <h3 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">{title}</h3>
         <p className="text-gray-500 text-[14px] sm:text-base">{description}</p>
       </div>
     )}
@@ -96,7 +96,7 @@ const GridCard: FC<GridItemProps> = ({ title, description, image, className, hea
     </div>
     {headingPosition === 'below' && (
       <div>
-        <h2 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">{title}</h2>
+        <h3 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">{title}</h3>
         <p className="text-gray-500 text-[14px] sm:text-base">{description}</p>
       </div>
     )}

@@ -70,7 +70,7 @@ const FeatureSwitcher: FC = () => {
         <div className='flex flex-col max-w-6xl mx-auto md:pb-36 pb-16 px-8 md:px-0'>
             <div className='flex flex-col gap-2 mb-12'>
                 <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><GiDiamonds /><p>Features</p></div>
-                <h2 className='text-4xl md:text-5xl font-bold font-calsans'>
+                <h2 className='text-4xl sm:text-4xl md:text-5xl font-bold font-calsans'>
                     Keep conversations organized
                 </h2>
             </div>

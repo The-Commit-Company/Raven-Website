@@ -42,9 +42,9 @@ const VideoSwitcher: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between">
             {/* Text Section */}
             <div className="w-full md:w-1/3 md:pt-20">
-                <h2 className="text-xl font-semibold mb-10 md:w-60">
+                <h3 className="text-xl font-semibold mb-10 md:w-60">
                     Build your own bots without writing a single line of code
-                </h2>
+                </h3>
                 <div role="listbox" aria-label="Video options" className='space-y-4 mb-10 md:mb-0'>
                     {options.map((option, index) => (
                         <div

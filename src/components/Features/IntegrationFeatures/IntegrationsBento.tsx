@@ -66,7 +66,7 @@ const HRIntegrationExample: React.FC = () => {
     return (
         <div className='flex flex-col items-center justify-center gap-4 p-4 md:p-6'>
             <div>
-                <h2 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">Trigger notifications</h2>
+                <h3 className="text-lg sm:text-xl md:text-xl text-gray-800 font-semibold mb-2">Trigger notifications</h3>
                 <p className="text-gray-500 text-[14px] sm:text-base">Bots can send messages on document events based on conditions</p>
             </div>
             <div className="relative overflow-hidden rounded-xl">
