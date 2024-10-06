@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 const VideoSwitcher: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState(0);
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [videoSrc, setVideoSrc] = useState('');
+    const [videoSrc, setVideoSrc] = useState('assets/FileReadingAI.mp4'); // Initial video source
 
     const options = useMemo(() => [
         { title: 'Extract data from files and images', videoSrc: 'assets/FileReadingAI.mp4', poster: 'assets/FileReadingAIPreview.webp' },
@@ -12,19 +12,34 @@ const VideoSwitcher: React.FC = () => {
         { title: 'Gather info from multiple sources quickly', videoSrc: 'assets/MultipleSourcesAI.mp4', poster: 'assets/MultipleSourcesAIPreview.webp' },
     ], []);
 
+    // Set video source when an option is selected
+    useEffect(() => {
+        setVideoSrc(options[selectedOption].videoSrc);
+    }, [selectedOption, options]);
+
+    // Play the video when the component mounts and the video is in view
     useEffect(() => {
         const currentVideo = videoRef.current;
         if (!currentVideo) return;
 
+        // Play the video immediately if the videoRef is set
+        const playVideo = () => {
+            if (videoSrc && currentVideo) {
+                currentVideo.play().catch((error) => {
+                    // If autoplay is blocked, we can log or handle the error
+                    console.error('Autoplay was prevented:', error);
+                });
+            }
+        };
+
+        // IntersectionObserver to control playback when the video is in view
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setVideoSrc(options[selectedOption].videoSrc); // Load video src when in view
-                        currentVideo.play();
+                        playVideo(); // Play when in view
                     } else {
-                        currentVideo.pause();
-                        setVideoSrc(''); // Unset src to stop loading video when out of view
+                        currentVideo.pause(); // Pause when out of view
                     }
                 });
             },
@@ -33,10 +48,13 @@ const VideoSwitcher: React.FC = () => {
 
         observer.observe(currentVideo);
 
+        // Play the video on mount
+        playVideo();
+
         return () => {
-            observer.unobserve(currentVideo); // Clean up the observer
+            observer.unobserve(currentVideo); // Clean up observer
         };
-    }, [selectedOption, options]);
+    }, [videoSrc]);
 
     return (
         <div className="flex flex-col md:flex-row justify-between">
@@ -45,11 +63,11 @@ const VideoSwitcher: React.FC = () => {
                 <h3 className="text-xl font-semibold mb-10 md:w-60">
                     Build your own bots without writing a single line of code
                 </h3>
-                <div role="listbox" aria-label="Video options" className='space-y-4 mb-10 md:mb-0'>
+                <div role="listbox" aria-label="Video options" className="space-y-4 mb-10 md:mb-0">
                     {options.map((option, index) => (
                         <button
                             key={index}
-                            className={`cursor-pointer flex items-center text-md font-medium transition-all duration-300 ${selectedOption === index
+                            className={`cursor-pointer flex text-md font-medium transition-all duration-300 ${selectedOption === index
                                 ? 'text-gray-800 font-semibold'
                                 : 'text-gray-400'
                                 }`}
@@ -94,7 +112,6 @@ const VideoSwitcher: React.FC = () => {
                             aria-label={options[selectedOption].title}
                         >
                             Your browser does not support the video tag.
-                            {/* If there's no need for captions, indicate that with a track element */}
                             <track kind="captions" srcLang="en" label="No captions available" default />
                         </video>
                     </div>
