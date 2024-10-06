@@ -178,13 +178,13 @@ const GithubStats: React.FC = () => {
             <h3 className="text-2xl font-bold mb-4 font-calsans">raven</h3>
 
             <div className="flex flex-wrap space-x-2 mb-4">
-                <span className="px-3 py-1 border border-gray-300 text-gray-600 rounded-full text-sm">react</span>
-                <span className="px-3 py-1 border border-gray-300 text-gray-600 rounded-full text-sm">frappe</span>
-                <span className="px-3 py-1 border border-gray-300 text-gray-600 rounded-full text-sm">typescript</span>
-                <span className="px-3 py-1 border border-gray-300 text-gray-600 rounded-full text-sm">python</span>
+                <span className="px-3 py-1 border border-gray-300 rounded-full text-sm">react</span>
+                <span className="px-3 py-1 border border-gray-300 rounded-full text-sm">frappe</span>
+                <span className="px-3 py-1 border border-gray-300 rounded-full text-sm">typescript</span>
+                <span className="px-3 py-1 border border-gray-300 rounded-full text-sm">python</span>
             </div>
 
-            <div className="flex flex-wrap items-center space-x-4 text-gray-500 text-sm font-medium mb-4 pl-1">
+            <div className="flex flex-wrap items-center space-x-4 text-gray-600 text-sm font-medium mb-4 pl-1">
                 <div className="flex items-center space-x-2">
                     <FaGithub className='text-lg' />
                     <span>AGPL-3.0</span>
@@ -206,7 +206,7 @@ const GithubStats: React.FC = () => {
                     <div className="no-data text-sm">No data available</div>
                 )}
             </div>
-            <p className="text-xs text-gray-500 mt-2">Commits per week, updated a day ago</p>
+            <p className="text-xs text-gray-600 mt-2">Commits per week, updated a day ago</p>
         </a>
     );
 };

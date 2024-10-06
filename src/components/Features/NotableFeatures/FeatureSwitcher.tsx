@@ -93,11 +93,12 @@ const FeatureSwitcher: FC = () => {
                                 <div className="hidden md:block">
                                     <div role="listbox" aria-label="Feature options" className="grid grid-cols-4 gap-8 mb-10 text-left">
                                         {options.map((opt) => (
-                                            <div
+                                            <button
                                                 key={opt.label}
                                                 onClick={() => setSelectedOption(opt)}
                                                 className="cursor-pointer"
                                                 role="option"
+                                                aria-disabled={selectedOption.label !== opt.label}
                                                 aria-selected={selectedOption.label === opt.label}
                                                 tabIndex={0}
                                                 onKeyPress={(e) => {
@@ -112,7 +113,7 @@ const FeatureSwitcher: FC = () => {
                                                     description={opt.description}
                                                     isSelected={selectedOption.label === opt.label} // Pass selected state
                                                 />
-                                            </div>
+                                            </button>
                                         ))}
                                     </div>
 

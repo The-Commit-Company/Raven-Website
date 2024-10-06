@@ -47,7 +47,7 @@ const VideoSwitcher: React.FC = () => {
                 </h3>
                 <div role="listbox" aria-label="Video options" className='space-y-4 mb-10 md:mb-0'>
                     {options.map((option, index) => (
-                        <div
+                        <button
                             key={index}
                             className={`cursor-pointer flex items-center text-md font-medium transition-all duration-300 ${selectedOption === index
                                 ? 'text-gray-800 font-semibold'
@@ -55,6 +55,7 @@ const VideoSwitcher: React.FC = () => {
                                 }`}
                             onClick={() => setSelectedOption(index)}
                             role="option"
+                            aria-disabled={selectedOption !== index}
                             aria-selected={selectedOption === index}
                             tabIndex={0}
                             onKeyPress={(e) => {
@@ -71,7 +72,7 @@ const VideoSwitcher: React.FC = () => {
                                 aria-hidden="true"
                             ></div>
                             {option.title}
-                        </div>
+                        </button>
                     ))}
                 </div>
             </div>
