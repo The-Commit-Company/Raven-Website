@@ -1,20 +1,23 @@
 'use client';
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { ImSpinner2 } from 'react-icons/im';
 
 const VideoSwitcher: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState(0);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [videoSrc, setVideoSrc] = useState('assets/FileReadingAI.mp4'); // Initial video source
+    const [loading, setLoading] = useState(true); // Video loading state
 
     const options = useMemo(() => [
         { title: 'Extract data from files and images', videoSrc: 'assets/FileReadingAI.mp4', poster: 'assets/FileReadingAIPreview.webp' },
         { title: 'Chain multiple complex tasks', videoSrc: 'assets/DataImporter.mp4', poster: 'assets/DataImporterPreview.webp' },
-        { title: 'Gather info from multiple sources quickly', videoSrc: 'assets/MultipleSourcesAI.mp4', poster: 'assets/MultipleSourcesAIPreview.webp' },
+        { title: 'Gather info from multiple sources', videoSrc: 'assets/MultipleSourcesAI.mp4', poster: 'assets/MultipleSourcesAIPreview.webp' },
     ], []);
 
     // Set video source when an option is selected
     useEffect(() => {
         setVideoSrc(options[selectedOption].videoSrc);
+        setLoading(true); // Set loading to true when video source changes
     }, [selectedOption, options]);
 
     // Play the video when the component mounts and the video is in view
@@ -22,17 +25,14 @@ const VideoSwitcher: React.FC = () => {
         const currentVideo = videoRef.current;
         if (!currentVideo) return;
 
-        // Play the video immediately if the videoRef is set
         const playVideo = () => {
             if (videoSrc && currentVideo) {
                 currentVideo.play().catch((error) => {
-                    // If autoplay is blocked, we can log or handle the error
                     console.error('Autoplay was prevented:', error);
                 });
             }
         };
 
-        // IntersectionObserver to control playback when the video is in view
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -47,14 +47,17 @@ const VideoSwitcher: React.FC = () => {
         );
 
         observer.observe(currentVideo);
-
-        // Play the video on mount
         playVideo();
 
         return () => {
             observer.unobserve(currentVideo); // Clean up observer
         };
     }, [videoSrc]);
+
+    // Video events to control loading spinner
+    const handleWaiting = () => setLoading(true);   // Show spinner when video is buffering/loading
+    const handlePlaying = () => setLoading(false);  // Hide spinner when the video starts playing
+    const handleLoadedData = () => setLoading(false);  // Hide spinner when video has enough data to play
 
     return (
         <div className="flex flex-col md:flex-row justify-between">
@@ -67,7 +70,7 @@ const VideoSwitcher: React.FC = () => {
                     {options.map((option, index) => (
                         <button
                             key={index}
-                            className={`cursor-pointer flex text-md font-medium transition-all duration-300 ${selectedOption === index
+                            className={`cursor-pointer flex text-left text-md font-medium transition-all duration-300 ${selectedOption === index
                                 ? 'text-gray-800 font-semibold'
                                 : 'text-gray-400'
                                 }`}
@@ -99,7 +102,13 @@ const VideoSwitcher: React.FC = () => {
             <div className="md:w-2/3 flex justify-center">
                 <div className="relative p-1 bg-gradient-to-br from-gray-200 to-transparent rounded-md">
                     {/* Video Container */}
-                    <div className="rounded-md overflow-hidden">
+                    <div className="rounded-md overflow-hidden relative" aria-live="polite">
+                        {/* Loading spinner */}
+                        {loading && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                                <ImSpinner2 className="animate-spin text-white text-4xl" />
+                            </div>
+                        )}
                         <video
                             ref={videoRef}
                             poster={options[selectedOption].poster}
@@ -110,6 +119,9 @@ const VideoSwitcher: React.FC = () => {
                             autoPlay
                             className="w-full h-auto"
                             aria-label={options[selectedOption].title}
+                            onWaiting={handleWaiting}
+                            onPlaying={handlePlaying}
+                            onLoadedData={handleLoadedData}
                         >
                             Your browser does not support the video tag.
                             <track kind="captions" srcLang="en" label="No captions available" default />
