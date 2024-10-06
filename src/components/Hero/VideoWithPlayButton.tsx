@@ -21,7 +21,7 @@ const VideoWithPlayButton = () => {
         <div className="relative">
             <video
                 ref={videoRef}
-                poster={'assets/HeroVideoCover.png'}
+                poster={'assets/HeroVideoCover.webp'}
                 className="rounded-md md:rounded-xl border border-gray-200 object-cover"
                 width={1000}
                 src={'assets/HeroVideo.mp4'}
