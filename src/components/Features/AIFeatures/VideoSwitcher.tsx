@@ -3,8 +3,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 const VideoSwitcher: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState(0);
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [videoSrc, setVideoSrc] = useState('assets/FileReadingAI.mp4'); // Initial video source
+    const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
     const options = useMemo(() => [
         { title: 'Extract data from files and images', videoSrc: 'assets/FileReadingAI.mp4', poster: 'assets/FileReadingAIPreview.webp' },
@@ -12,44 +11,60 @@ const VideoSwitcher: React.FC = () => {
         { title: 'Gather info from multiple sources', videoSrc: 'assets/MultipleSourcesAI.mp4', poster: 'assets/MultipleSourcesAIPreview.webp' },
     ], []);
 
-    // Set video source when an option is selected
+    // Play/pause videos based on the selected option
     useEffect(() => {
-        setVideoSrc(options[selectedOption].videoSrc);
-    }, [selectedOption, options]);
-
-    // Play the video when the component mounts and the video is in view
-    useEffect(() => {
-        const currentVideo = videoRef.current;
-        if (!currentVideo) return;
-
-        const playVideo = () => {
-            if (videoSrc && currentVideo) {
-                currentVideo.play().catch((error) => {
-                    console.error('Autoplay was prevented:', error);
-                });
+        videoRefs.current.forEach((video, index) => {
+            if (video) {
+                if (index === selectedOption) {
+                    video.currentTime = 0; // Reset to beginning
+                    video.play().catch((error) => {
+                        console.error('Autoplay was prevented:', error);
+                    });
+                } else {
+                    video.pause();
+                }
             }
-        };
+        });
+    }, [selectedOption]);
+
+    // Pause videos when out of view using IntersectionObserver
+    useEffect(() => {
+        const videos = videoRefs.current;
+        if (!videos || videos.length === 0) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
+                    const video = entry.target as HTMLVideoElement;
                     if (entry.isIntersecting) {
-                        playVideo(); // Play when in view
+                        // Only play the selected video when it comes into view
+                        if (videoRefs.current[selectedOption] === video) {
+                            video.play().catch((error) => {
+                                console.error('Autoplay was prevented:', error);
+                            });
+                        }
                     } else {
-                        currentVideo.pause(); // Pause when out of view
+                        video.pause();
                     }
                 });
             },
             { threshold: 0.5 }
         );
 
-        observer.observe(currentVideo);
-        playVideo();
+        videos.forEach((video) => {
+            if (video) {
+                observer.observe(video);
+            }
+        });
 
         return () => {
-            observer.unobserve(currentVideo); // Clean up observer
+            videos.forEach((video) => {
+                if (video) {
+                    observer.unobserve(video);
+                }
+            });
         };
-    }, [videoSrc]);
+    }, [selectedOption]);
 
     return (
         <div className="flex flex-col md:flex-row justify-between">
@@ -95,20 +110,23 @@ const VideoSwitcher: React.FC = () => {
                 <div className="relative p-1 bg-gradient-to-br from-gray-200 to-transparent rounded-md">
                     {/* Video Container */}
                     <div className="rounded-md overflow-hidden relative" aria-live="polite">
-                        <video
-                            ref={videoRef}
-                            poster={options[selectedOption].poster}
-                            src={videoSrc}
-                            className="w-full h-auto"
-                            aria-label={options[selectedOption].title}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                        >
-                            Your browser does not support the video tag.
-                            <track kind="captions" srcLang="en" label="No captions available" default />
-                        </video>
+                        {options.map((option, index) => (
+                            <video
+                                key={index}
+                                ref={(el) => { videoRefs.current[index] = el; }}
+                                poster={option.poster}
+                                src={option.videoSrc}
+                                className={`w-full h-auto ${selectedOption === index ? 'block' : 'hidden'}`}
+                                aria-label={option.title}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            >
+                                Your browser does not support the video tag.
+                                <track kind="captions" srcLang="en" label="No captions available" default />
+                            </video>
+                        ))}
                     </div>
                 </div>
             </div>

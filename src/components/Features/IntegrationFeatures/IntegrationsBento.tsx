@@ -36,6 +36,7 @@ const IntegrationsBento: React.FC = () => {
                         title="Ravens also deliver to your desk."
                         subtitle="The desk interface has a quick chat box for moments when you need to see your messages without losing context."
                         videoSrc="assets/RavenInDesk.mp4"
+                        poster="assets/RavenInDeskPreview.webp"
                     />
                 </div>
             </div>
@@ -88,10 +89,11 @@ interface ContentCardProps {
     title: string;
     subtitle: string;
     videoSrc?: string;
+    poster?: string;
     imageSrc?: StaticImageData;
 }
 
-const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, videoSrc, imageSrc }) => {
+const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, videoSrc, poster, imageSrc }) => {
     return (
         <div className="relative overflow-hidden rounded-xl flex items-center justify-center">
             <div className='flex flex-col gap-6 p-4 md:p-6'>
@@ -103,6 +105,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, subtitle, videoSrc, im
                     {videoSrc && (
                         <video
                             src={videoSrc}
+                            poster={poster}
                             className="rounded-xl border border-gray-100"
                             autoPlay
                             loop
