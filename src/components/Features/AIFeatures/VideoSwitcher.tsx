@@ -6,9 +6,9 @@ const VideoSwitcher: React.FC = () => {
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
     const options = useMemo(() => [
-        { title: 'Extract data from files and images', videoSrc: 'assets/FileReadingAI.mp4', poster: 'assets/FileReadingAIPreview.webp' },
-        { title: 'Chain multiple complex tasks', videoSrc: 'assets/DataImporter.mp4', poster: 'assets/DataImporterPreview.webp' },
-        { title: 'Gather info from multiple sources', videoSrc: 'assets/MultipleSourcesAI.mp4', poster: 'assets/MultipleSourcesAIPreview.webp' },
+        { title: 'Extract data from files and images', videoSrc: 'https://firebasestorage.googleapis.com/v0/b/raven-dev-frappe.appspot.com/o/public%2FFileReadingAI.mp4?alt=media', poster: 'assets/FileReadingAIPreview.webp' },
+        { title: 'Chain multiple complex tasks', videoSrc: 'https://firebasestorage.googleapis.com/v0/b/raven-dev-frappe.appspot.com/o/public%2FDataImporter.mp4?alt=media', poster: 'assets/DataImporterPreview.webp' },
+        { title: 'Gather info from multiple sources', videoSrc: 'https://firebasestorage.googleapis.com/v0/b/raven-dev-frappe.appspot.com/o/public%2FMultipleSourcesAI.mp4?alt=media', poster: 'assets/MultipleSourcesAIPreview.webp' },
     ], []);
 
     // Play/pause videos based on the selected option
