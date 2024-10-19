@@ -61,7 +61,7 @@ const FeaturesBentoGrid: FC = () => {
       {/* Section heading */}
       <div className='flex flex-col gap-2 mb-12'>
         <div className='flex items-center gap-2 font-semibold text-gray-800 text-md'><IoChatboxEllipses /><p>Chat</p></div>
-        <h2 className='text-4xl sm:text-4xl md:text-5xl font-bold font-calsans'>
+        <h2 className='text-4xl sm:text-4xl md:text-5xl font-semibold font-calsans'>
           Chat, share, and collaborate
         </h2>
       </div>
